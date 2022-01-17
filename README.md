@@ -13,3 +13,5 @@ Datasets:
   UCF_Crime: https://www.crcv.ucf.edu/projects/real-world/ <br/>
 
 Requirements:
+
+Files Scheme:
