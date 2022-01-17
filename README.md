@@ -1,6 +1,6 @@
 # ViT Neural Structured Learning Violence Anomaly Detection
 
-Vision Transformer Featured Model.
+Vision Transformer Featured Model For Training.
 
   Link: https://www.dropbox.com/sh/yt9xdtwqymrwd7i/AAAx5s7FDSX1V4EiPCxMVJpRa?dl=0
 
