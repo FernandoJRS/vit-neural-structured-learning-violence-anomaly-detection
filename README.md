@@ -2,7 +2,7 @@
 
 Vision Transformer Featured Model.
 
-  Link: https://www.dropbox.com/sh/4m1kitdwglfjy8f/AADGnqgzIpiXSj0QRV9wZ65ca?dl=0
+  Link: https://www.dropbox.com/sh/yt9xdtwqymrwd7i/AAAx5s7FDSX1V4EiPCxMVJpRa?dl=0
 
 
 Datasets:
