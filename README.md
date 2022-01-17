@@ -12,6 +12,13 @@ Datasets:
   XD-Violence: https://roc-ng.github.io/XD-Violence/ <br/>
   UCF_Crime: https://www.crcv.ucf.edu/projects/real-world/ <br/>
 
-Requirements:
+Requirements: 
+  
+  File: requirements.py <br/>
+  
+  pip install tensorflow==2.7.0 <br/>
+  pip install scikit-learn <br/>
+  pip install neural_structured_learning <br/>
+  pip install opencv-python==4.5.5.62 <br/>
 
 Files Scheme:
