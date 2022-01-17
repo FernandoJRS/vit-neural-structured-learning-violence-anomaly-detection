@@ -7,7 +7,7 @@ Vision Transformer Featured Model.
 
 Datasets:
 
-  NTU CCTV-Fights: https://rose1.ntu.edu.sg/dataset/cctvFights/
-  UBI_Fights: http://socia-lab.di.ubi.pt/EventDetection/
-  XD-Violence: https://roc-ng.github.io/XD-Violence/
-  UCF_Crime: https://www.crcv.ucf.edu/projects/real-world/
+  NTU CCTV-Fights: https://rose1.ntu.edu.sg/dataset/cctvFights/ \n
+  UBI_Fights: http://socia-lab.di.ubi.pt/EventDetection/ \n
+  XD-Violence: https://roc-ng.github.io/XD-Violence/ \n
+  UCF_Crime: https://www.crcv.ucf.edu/projects/real-world/ \n
