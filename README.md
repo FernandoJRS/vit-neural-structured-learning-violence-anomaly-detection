@@ -1,4 +1,4 @@
-# vit-neural-structured-learning-violence-anomaly-detection
+# ViT Neural Structured Learning Violence Anomaly Detection
 
 Vision Transformer Featured Model.
 
@@ -11,3 +11,5 @@ Datasets:
   UBI_Fights: http://socia-lab.di.ubi.pt/EventDetection/ <br/>
   XD-Violence: https://roc-ng.github.io/XD-Violence/ <br/>
   UCF_Crime: https://www.crcv.ucf.edu/projects/real-world/ <br/>
+
+Requirements:
