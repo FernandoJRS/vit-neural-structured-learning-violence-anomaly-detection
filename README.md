@@ -35,16 +35,20 @@ En esta sección se presentan los requisitos necesarios para ejecutar los script
 El esquema de archivos de este repositorio va asociado por pares y a su vez cada par de scripts asociado a un conjunto de de datos. Todos ellos trabajan con el mismo modelo ViT. El esquema es el siguiente:
 
 1. DATA_CCTV.py - NSL_2D_CCTV - NTU CCTV-Fights.
-  - El archivo DATA_CCTV carga y procesa el conjunto de datos NTU CCTV-Fights. El archivo NSL_2D_CCTV carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos NTU CCTV-Fights.
+
+- El archivo DATA_CCTV carga y procesa el conjunto de datos NTU CCTV-Fights. El archivo NSL_2D_CCTV carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos NTU CCTV-Fights.
     
 2. DATA_UBI.py - NSL_2D_UBI - UBI_Fights.
-  - El archivo DATA_UBI carga y procesa el conjunto de datos UBI_Fights. El archivo NSL_2D_UBI carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UBI_Fights.
+
+- El archivo DATA_UBI carga y procesa el conjunto de datos UBI_Fights. El archivo NSL_2D_UBI carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UBI_Fights.
 
 3. DATA_XD.py - NSL_2D_XD - XD-Violence.
-  - El archivo DATA_XD carga y procesa el conjunto de datos XD-Violence. El archivo NSL_2D_XD carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el    entrenamiento y la evaluación para el conjunto de datos XD-Violence.
+
+- El archivo DATA_XD carga y procesa el conjunto de datos XD-Violence. El archivo NSL_2D_XD carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el    entrenamiento y la evaluación para el conjunto de datos XD-Violence.
     
 4. DATA_UCF.py - NSL_2D_UCF - UCF_Crime.
-  - El archivo DATA_UCF carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
+
+- El archivo DATA_UCF carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
 
 ## Run Scripts
 
@@ -64,24 +68,45 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
 ```
 
-- El segundo parámetro a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_.
+- Los siguientes parámetros a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_.
 
   - Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
     - path_base = 'CCTV-Fights/'
     - path_videos = 'CCTV-Fights/Videos/'
+   
+    ```
+    path_base = 'CCTV-Fights/'
+    path_videos = 'CCTV-Fights/Videos/'
+    ```
 
   - Para el script UBI_Fights las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
     - path_base = 'UBI_Fights/annotation/'
     - path_videos = 'UBI_Fights/videos/'
+    
+    ```
+    path_base = 'UBI_Fights/annotation/'
+    path_videos = 'UBI_Fights/videos/'
+    ```
 
   - Para el script XD-Violence las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
     - path_base = 'XD-Violence/'
     - path_videos_train = 'XD-Violence/Train/'
     - path_videos_test = 'XD-Violence/Test/'
+    
+    ```
+    path_base = 'XD-Violence/'
+    path_videos_train = 'XD-Violence/Train/'
+    path_videos_test = 'XD-Violence/Test/'
+    ```
 
   - Para el script UCF_Crimes las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
     - path_videos = 'UCF_Crimes/Videos/'
     - path_splits = 'UCF_Crimes/Action_Regnition_splits/'
+
+    ```
+    path_videos = 'UCF_Crimes/Videos/'
+    path_splits = 'UCF_Crimes/Action_Regnition_splits/'
+    ```
 
 
 
