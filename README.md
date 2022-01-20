@@ -7,6 +7,7 @@
 
 ## Datasets
 
+Los datasets utilizados en este proyecto son NTU CCTV-Fights, UBI_Fights, XD-Violence y UCF_Crime. <br/>
 
 Las rutas de los datasets usados son las siguientes:
 
@@ -25,3 +26,7 @@ Las rutas de los datasets usados son las siguientes:
   pip install opencv-python==4.5.5.62 <br/>
 
 ## Files Scheme
+
+El esquema de archivos de este repositorio va asociado por pares y a su vez cada par de scripts asociado a un conjunto de de datos. Todos ellos trabajan con el mismo modelo ViT. El esquema es el siguiente:
+
+
