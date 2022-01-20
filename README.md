@@ -71,8 +71,9 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
 - Los siguientes parámetros a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_.
 
   - Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  
     - path_base = 'CCTV-Fights/'
-    - path_videos = 'CCTV-Fights/Videos/'
+    - path_videos = 'CCTV-Fights/Videos/'<br/>
    
     ```
     path_base = 'CCTV-Fights/'
@@ -80,8 +81,9 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     ```
 
   - Para el script UBI_Fights las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  
     - path_base = 'UBI_Fights/annotation/'
-    - path_videos = 'UBI_Fights/videos/'
+    - path_videos = 'UBI_Fights/videos/'<br/>
     
     ```
     path_base = 'UBI_Fights/annotation/'
@@ -89,9 +91,10 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     ```
 
   - Para el script XD-Violence las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  
     - path_base = 'XD-Violence/'
     - path_videos_train = 'XD-Violence/Train/'
-    - path_videos_test = 'XD-Violence/Test/'
+    - path_videos_test = 'XD-Violence/Test/'<br/>
     
     ```
     path_base = 'XD-Violence/'
@@ -100,8 +103,9 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     ```
 
   - Para el script UCF_Crimes las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  
     - path_videos = 'UCF_Crimes/Videos/'
-    - path_splits = 'UCF_Crimes/Action_Regnition_splits/'
+    - path_splits = 'UCF_Crimes/Action_Regnition_splits/'<br/>
 
     ```
     path_videos = 'UCF_Crimes/Videos/'
