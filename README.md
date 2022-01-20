@@ -62,17 +62,35 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 
 3º El tercer paso es configurar los siguientes parametros de los scripts NSL_2D y DATA_:
 
-- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model usando la función hub.load(). <br/>
+- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D usando la función hub.load(). <br/>
 
 ```
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
 ```
 
-- El segundo parámetro a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar su ruta relativa en la variable load_model en la función hub.load(). <br/>
+- El segundo parámetro a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativa en los scripts DATA_ en la. <br/>
 
-```
-loaded_model = hub.load("HubModels/vit_s16_fe_1")
-```
+-- Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+--- path_base = 'CCTV-Fights/'
+--- path_videos = 'CCTV-Fights/Videos/'
+
+-- Para el script UBI_Fights las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+--- path_base = 'UBI_Fights/annotation/'
+--- path_videos = 'UBI_Fights/videos/'
+
+-- Para el script XD-Violence las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+--- path_base = 'XD-Violence/'
+--- path_videos_train = 'XD-Violence/Train/'
+--- path_videos_test = 'XD-Violence/Test/'
+
+-- Para el script UCF_Crimes las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+--- path_videos = 'UCF_Crimes/Videos/'
+--- path_splits = 'UCF_Crimes/Action_Regnition_splits/'
+
+
+
+
+
 
 
 
