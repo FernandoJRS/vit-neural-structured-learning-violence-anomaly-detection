@@ -56,14 +56,23 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 
 1º Descargar el modelo ViT a través del enlace que se proporciona en este documento.
 
-2º Seleccionar los pares de scripts se quiere ejecutar y descargar el dataset correspondiente, ejemplo:
+2º Seleccionar y descargar los pares de scripts que se quieren ejecutar y descargar el dataset correspondiente, ejemplo:
 
 - Si queremos ejecutar el script NSL_2D_CCTV, debemos descargar dicho script y su asociado DATA_CCTV, además también debemos descargar su conjunto de datos correspondiente UCF_Crime a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV, NSL_2D_UBI, NSL_2D_XD).
 
-3º El tercer paso es configurar los siguientes parametros de los scripts NSL_2D:
+3º El tercer paso es configurar los siguientes parametros de los scripts NSL_2D y DATA_:
 
-- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model en la función hub.load(). <br/>
+- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model usando la función hub.load(). <br/>
 
 ```
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
 ```
+
+- El segundo parámetro a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar su ruta relativa en la variable load_model en la función hub.load(). <br/>
+
+```
+loaded_model = hub.load("HubModels/vit_s16_fe_1")
+```
+
+
+
