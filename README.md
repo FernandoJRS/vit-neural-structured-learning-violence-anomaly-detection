@@ -150,3 +150,10 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
 - Para el conjunto de datos UCF_Crime hay que ejecutar el script NSL_2D_UCF.
 
 ## Results
+
+|     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy |
+|-----------------|--------------|-----------------------------|----------------------|
+| NTU CCTV-Fights | Optical Flow |         100.00 %	           |        100.00 %      |
+| UBI-Fights      | Optical Flow |         100.00 %	           |        100.00 %      |   
+| XD-Violence     | Optical Flow |         99.98 %             |        99.98 %       |  
+| UCF-Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |  
