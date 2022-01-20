@@ -83,7 +83,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
   - Para el script UBI_Fights las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_base = 'UBI_Fights/annotation/'
-    - path_videos = 'UBI_Fights/videos/'<br/>
+    - path_videos = 'UBI_Fights/videos/'<br/><br/>
     
     ```
     path_base = 'UBI_Fights/annotation/'
@@ -94,24 +94,25 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
   
     - path_base = 'XD-Violence/'
     - path_videos_train = 'XD-Violence/Train/'
-    - path_videos_test = 'XD-Violence/Test/'<br/>
+    - path_videos_test = 'XD-Violence/Test/'<br/><br/>
     
     ```
     path_base = 'XD-Violence/'
     path_videos_train = 'XD-Violence/Train/'
-    path_videos_test = 'XD-Violence/Test/'
+    path_videos_test = 'XD-Violence/Test/'<br/><br/>
     ```
 
   - Para el script UCF_Crimes las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_videos = 'UCF_Crimes/Videos/'
-    - path_splits = 'UCF_Crimes/Action_Regnition_splits/'<br/>
+    - path_splits = 'UCF_Crimes/Action_Regnition_splits/'<br/><br/>
 
     ```
     path_videos = 'UCF_Crimes/Videos/'
     path_splits = 'UCF_Crimes/Action_Regnition_splits/'
     ```
 
+- Los últimos parámetros a configurar son las rutas de los checkpoints para almacenar el modelo pre-entrenado
 
 
 
