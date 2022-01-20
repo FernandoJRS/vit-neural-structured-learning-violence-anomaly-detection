@@ -34,19 +34,19 @@ En esta sección se presentan los requisitos necesarios para ejecutar los script
 
 El esquema de archivos de este repositorio va asociado por pares y a su vez cada par de scripts asociado a un conjunto de de datos. Todos ellos trabajan con el mismo modelo ViT. El esquema es el siguiente:
 
-1. DATA_CCTV.py - NSL_2D_CCTV - NTU CCTV-Fights.
+1. DATA_CCTV.py - NSL_2D_CCTV.py - NTU CCTV-Fights.
 
 - El archivo DATA_CCTV carga y procesa el conjunto de datos NTU CCTV-Fights. El archivo NSL_2D_CCTV carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos NTU CCTV-Fights.
     
-2. DATA_UBI.py - NSL_2D_UBI - UBI_Fights.
+2. DATA_UBI.py - NSL_2D_UBI.py - UBI_Fights.
 
 - El archivo DATA_UBI carga y procesa el conjunto de datos UBI_Fights. El archivo NSL_2D_UBI carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UBI_Fights.
 
-3. DATA_XD.py - NSL_2D_XD - XD-Violence.
+3. DATA_XD.py - NSL_2D_XD.py - XD-Violence.
 
 - El archivo DATA_XD carga y procesa el conjunto de datos XD-Violence. El archivo NSL_2D_XD carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el    entrenamiento y la evaluación para el conjunto de datos XD-Violence.
     
-4. DATA_UCF.py - NSL_2D_UCF - UCF_Crime.
+4. DATA_UCF.py - NSL_2D_UCF.py - UCF_Crime.
 
 - El archivo DATA_UCF carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
 
