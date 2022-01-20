@@ -68,24 +68,24 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
 ```
 
-- El segundo parámetro a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativa en los scripts DATA_ en la. <br/>
+- El segundo parámetro a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_. <br/>
 
--- Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
---- path_base = 'CCTV-Fights/'
---- path_videos = 'CCTV-Fights/Videos/'
+-- Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:<br/>
+--- path_base = 'CCTV-Fights/'<br/>
+--- path_videos = 'CCTV-Fights/Videos/'<br/>
 
--- Para el script UBI_Fights las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
---- path_base = 'UBI_Fights/annotation/'
---- path_videos = 'UBI_Fights/videos/'
+-- Para el script UBI_Fights las rutas a modificar en función de donde se haya descargado el conjunto de datos son:<br/>
+--- path_base = 'UBI_Fights/annotation/'<br/>
+--- path_videos = 'UBI_Fights/videos/'<br/>
 
--- Para el script XD-Violence las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
---- path_base = 'XD-Violence/'
---- path_videos_train = 'XD-Violence/Train/'
---- path_videos_test = 'XD-Violence/Test/'
+-- Para el script XD-Violence las rutas a modificar en función de donde se haya descargado el conjunto de datos son:<br/>
+--- path_base = 'XD-Violence/'<br/>
+--- path_videos_train = 'XD-Violence/Train/'<br/>
+--- path_videos_test = 'XD-Violence/Test/'<br/>
 
--- Para el script UCF_Crimes las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
---- path_videos = 'UCF_Crimes/Videos/'
---- path_splits = 'UCF_Crimes/Action_Regnition_splits/'
+-- Para el script UCF_Crimes las rutas a modificar en función de donde se haya descargado el conjunto de datos son:<br/>
+--- path_videos = 'UCF_Crimes/Videos/'<br/>
+--- path_splits = 'UCF_Crimes/Action_Regnition_splits/'<br/>
 
 
 
