@@ -21,7 +21,7 @@ Las rutas de los datasets usados son las siguientes:
 
 ## Requirements 
 
-En esta sección se presentan los requisitos necesarios para ejecutar los scripts asi como un archivo de instalación de requisitos.
+En esta sección se presentan los requisitos necesarios para ejecutar los scripts asi como un archivo de instalación de requisitos que se indica a continuación.
   
   File: requirements.py <br/>
   
@@ -50,4 +50,4 @@ El esquema de archivos de este repositorio va asociado por pares y a su vez cada
   
 - El archivo DATA_UCF carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
 
-
+## Run Scripts
