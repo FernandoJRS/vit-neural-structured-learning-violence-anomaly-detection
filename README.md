@@ -151,6 +151,8 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
 
 ## Results
 
+En esta sección se muestran los resultados obtenidos por cada uno de los conjuntos de datos empleando dos métricas, Sparse Categorical Accuracy y Categorical Accuracy.
+
 |     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy |
 |-----------------|--------------|-----------------------------|----------------------|
 | NTU CCTV-Fights | Optical Flow |         100.00 %	           |        100.00 %      |
