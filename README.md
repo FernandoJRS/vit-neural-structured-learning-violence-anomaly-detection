@@ -48,7 +48,7 @@ El esquema de archivos de este repositorio va asociado por pares y a su vez cada
     
 4. DATA_UCF.py - NSL_2D_UCF.py - UCF_Crime.
 
-- El archivo DATA_UCF carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
+- El archivo DATA_UCF.py carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF.py carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
 
 ## Run Scripts
 
@@ -58,9 +58,9 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 
 2. Seleccionar y descargar los pares de scripts que se quieren ejecutar y descargar el dataset correspondiente, ejemplo:
 
-- Si queremos ejecutar el script NSL_2D_CCTV, debemos descargar dicho script y su script asociado DATA_CCTV, además también debemos descargar su conjunto de datos correspondiente NTU CCTV-Fights a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV, NSL_2D_UBI, NSL_2D_XD).
+- Si queremos ejecutar el script NSL_2D_CCTV.py, debemos descargar dicho script y su script asociado DATA_CCTV.py, además también debemos descargar su conjunto de datos correspondiente NTU CCTV-Fights a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV.py, NSL_2D_UBI.py, NSL_2D_XD.py).
 
-3. El tercer paso es configurar los siguientes parametros de los scripts NSL_2D_DatasetName y DATA_DatasetName:
+3. El tercer paso es configurar los siguientes parametros de los scripts NSL_2D_DatasetName.py y DATA_DatasetName.py:
 
 - El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D_DatasetName usando la función hub.load(). 
 
@@ -70,7 +70,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
 
 - Los siguientes parámetros a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_DatasetName.
 
-  - Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - Para el script DATA_CCTV.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_base = 'CCTV-Fights/'
     - path_videos = 'CCTV-Fights/Videos/'<br/><br/>
@@ -80,7 +80,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_videos = 'CCTV-Fights/Videos/'
     ```
 
-  - Para el script DATA_UBI las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - Para el script DATA_UBI.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_base = 'UBI_Fights/annotation/'
     - path_videos = 'UBI_Fights/videos/'<br/><br/>
@@ -90,7 +90,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_videos = 'UBI_Fights/videos/'
     ```
 
-  - Para el script DATA_XD las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - Para el script DATA_XD.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_base = 'XD-Violence/'
     - path_videos_train = 'XD-Violence/Train/'
@@ -102,7 +102,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_videos_test = 'XD-Violence/Test/'<br/><br/>
     ```
 
-  - Para el script DATA_UCF las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - Para el script DATA_UCF.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_videos = 'UCF_Crimes/Videos/'
     - path_splits = 'UCF_Crimes/Action_Regnition_splits/'<br/><br/>
@@ -112,30 +112,30 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_splits = 'UCF_Crimes/Action_Regnition_splits/'
     ```
 
-- Los últimos parámetros a configurar son la ruta de los checkpoints para almacenar el modelo pre-entrenado y la ruta donde se almacenará un TensorBoard con la información del entrenamiento del modelo y los archivos .log. Estas rutas se modifican en los scripts NSL_2D_DatasetName. Los resultados se almacenará dentro de un directorio llamado 'Results' que se generará automáticamente dentro de la ruta en la cual se haya descargado cada uno de los conjuntos de datos.
+- Los últimos parámetros a configurar son la ruta de los checkpoints para almacenar el modelo pre-entrenado y la ruta donde se almacenará un TensorBoard con la información del entrenamiento del modelo y los archivos .log. Estas rutas se modifican en los scripts NSL_2D_DatasetName.py. Los resultados se almacenará dentro de un directorio llamado 'Results' que se generará automáticamente dentro de la ruta en la cual se haya descargado cada uno de los conjuntos de datos.
 
-  - Para el conjunto de datos NTU CCTV-Fights, en el script NSL_2D_CCTV, las rutas son las siguientes:
+  - Para el conjunto de datos NTU CCTV-Fights, en el script NSL_2D_CCTV.py, las rutas son las siguientes:
   
     ```
     log_dir = "CCTV-Fights/Results/logs/fit/"
     checkpoint_path = "CCTV-Fights/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos UBI_Fights, en el script NSL_2D_UBI, las rutas son las siguientes:
+  - Para el conjunto de datos UBI_Fights, en el script NSL_2D_UBI.py, las rutas son las siguientes:
   
     ```
     log_dir = "UBI_Fights/Results/logs/fit/"
     checkpoint_path = "UBI_Fights/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos XD-Violence, en el script NSL_2D_XD, las rutas son las siguientes:
+  - Para el conjunto de datos XD-Violence, en el script NSL_2D_XD.py, las rutas son las siguientes:
 
     ```
     log_dir = "XD-Violence/Results/logs/fit/"
     checkpoint_path = "XD-Violence/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos UCF_Crime, en el script NSL_2D_UCF, las rutas son las siguientes:
+  - Para el conjunto de datos UCF_Crime.py, en el script NSL_2D_UCF.py, las rutas son las siguientes:
 
     ```
     log_dir = "UCF_Crimes/Results/logs/fit/"
@@ -144,14 +144,17 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     
 4. El cuarto y último paso es ejecutar el proceso de entrenamiento y evaluación del modelo con el conjunto de datos seleccinado, para cada conjunto de datos hay que ejecutar los siguientes scripts.
 
-- Para el conjunto de datos NTU CCTV-Fights hay que ejecutar el script NSL_2D_CCTV.
-- Para el conjunto de datos UBI_Fights hay que ejecutar el script NSL_2D_UBI.
-- Para el conjunto de datos XD-Violence hay que ejecutar el script NSL_2D_XD.
-- Para el conjunto de datos UCF_Crime hay que ejecutar el script NSL_2D_UCF.
+- Para el conjunto de datos NTU CCTV-Fights hay que ejecutar el script NSL_2D_CCTV.py.
+- Para el conjunto de datos UBI_Fights hay que ejecutar el script NSL_2D_UBI.py.
+- Para el conjunto de datos XD-Violence hay que ejecutar el script NSL_2D_XD.py.
+- Para el conjunto de datos UCF_Crime hay que ejecutar el script NSL_2D_UCF.py.
 
 ## Results
 
 En esta sección se muestran los resultados obtenidos por cada uno de los conjuntos de datos empleando dos métricas, Sparse Categorical Accuracy y Categorical Accuracy.
+
+En la primera tabla se muestran los resultados de una iteración para la partición entre entrenamiento, validación y testeo que viene predefinida para cada uno de los conjuntos de datos. El conjunto de datos UBI_Fights no posee una partición predefinida, por lo que en el archivo DATA_UBI.py, realizamos la partición en entrenamiento, validación y test.
+
 
 |     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy |
 |-----------------|--------------|-----------------------------|----------------------|
@@ -160,6 +163,7 @@ En esta sección se muestran los resultados obtenidos por cada uno de los conjun
 | XD-Violence     | Optical Flow |         99.98 %             |        99.98 %       |  
 | UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |
 
+El conjunto de datos UCF_Crime
 
 | UCF_Crime	Iteration | Train Split | Test Split | Sparse Categorical Accuracy | Categorical Accuracy |
 |---------------------|-------------|------------|-----------------------------|----------------------|
