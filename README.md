@@ -163,7 +163,9 @@ En la primera tabla se muestran los resultados de una iteración para la partici
 | XD-Violence     | Optical Flow |         99.98 %             |        99.98 %       |  
 | UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |
 
-El conjunto de datos UCF_Crime
+
+El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la segunda tabla se muestran los resultados para cada partición. En la primera tabla los resultados corresponden a la partición Train_001 / Test_001.
+
 
 | UCF_Crime	Iteration | Train Split | Test Split | Sparse Categorical Accuracy | Categorical Accuracy |
 |---------------------|-------------|------------|-----------------------------|----------------------|
