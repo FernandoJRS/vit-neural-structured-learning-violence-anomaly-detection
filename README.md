@@ -64,4 +64,6 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 
 - El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model en la función hub.load(). <br/>
 
-    loaded_model = hub.load("HubModels/vit_s16_fe_1")
+```
+loaded_model = hub.load("HubModels/vit_s16_fe_1")
+```
