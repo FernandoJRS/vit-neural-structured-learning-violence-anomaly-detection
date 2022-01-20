@@ -73,7 +73,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
   - Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_base = 'CCTV-Fights/'
-    - path_videos = 'CCTV-Fights/Videos/'<br/>
+    - path_videos = 'CCTV-Fights/Videos/'<br/><br/>
    
     ```
     path_base = 'CCTV-Fights/'
