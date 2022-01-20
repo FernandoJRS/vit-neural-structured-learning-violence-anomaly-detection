@@ -17,6 +17,8 @@ Las rutas de los datasets usados son las siguientes:
   UCF_Crime: https://www.crcv.ucf.edu/projects/real-world/ <br/>
 
 ## Requirements 
+
+En esta sección se presentan los requisitos necesarios para ejecutar los scripts asi como un archivo de instalación de requisitos.
   
   File: requirements.py <br/>
   
