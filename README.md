@@ -34,15 +34,15 @@ En esta sección se presentan los requisitos necesarios para ejecutar los script
 
 El esquema de archivos de este repositorio va asociado por pares y a su vez cada par de scripts asociado a un conjunto de de datos. Todos ellos trabajan con el mismo modelo ViT. El esquema es el siguiente:
 
-1º DATA_CCTV.py - NSL_2D_CCTV - NTU CCTV-Fights.
+1. DATA_CCTV.py - NSL_2D_CCTV - NTU CCTV-Fights.
   
 - El archivo DATA_CCTV carga y procesa el conjunto de datos NTU CCTV-Fights. El archivo NSL_2D_CCTV carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza     el entrenamiento y la evaluación para el conjunto de datos NTU CCTV-Fights.
     
-2º DATA_UBI.py - NSL_2D_UBI - UBI_Fights.
+2. DATA_UBI.py - NSL_2D_UBI - UBI_Fights.
 
 - El archivo DATA_UBI carga y procesa el conjunto de datos UBI_Fights. El archivo NSL_2D_UBI carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza             el entrenamiento y la evaluación para el conjunto de datos UBI_Fights.
 
-3º DATA_XD.py - NSL_2D_XD - XD-Violence.
+3. DATA_XD.py - NSL_2D_XD - XD-Violence.
   
 - El archivo DATA_XD carga y procesa el conjunto de datos XD-Violence. El archivo NSL_2D_XD carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el    entrenamiento y la evaluación para el conjunto de datos XD-Violence.
     
@@ -58,11 +58,11 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 
 2. Seleccionar y descargar los pares de scripts que se quieren ejecutar y descargar el dataset correspondiente, ejemplo:
 
-  - Si queremos ejecutar el script NSL_2D_CCTV, debemos descargar dicho script y su asociado DATA_CCTV, además también debemos descargar su conjunto de datos correspondiente UCF_Crime a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV, NSL_2D_UBI, NSL_2D_XD).
+- Si queremos ejecutar el script NSL_2D_CCTV, debemos descargar dicho script y su asociado DATA_CCTV, además también debemos descargar su conjunto de datos correspondiente UCF_Crime a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV, NSL_2D_UBI, NSL_2D_XD).
 
 3. El tercer paso es configurar los siguientes parametros de los scripts NSL_2D y DATA_:
 
-  - El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D usando la función hub.load().
+- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D usando la función hub.load().
 
 ```
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
