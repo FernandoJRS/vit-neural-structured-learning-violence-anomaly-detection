@@ -58,17 +58,17 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 
 2. Seleccionar y descargar los pares de scripts que se quieren ejecutar y descargar el dataset correspondiente, ejemplo:
 
-- Si queremos ejecutar el script NSL_2D_CCTV, debemos descargar dicho script y su asociado DATA_CCTV, además también debemos descargar su conjunto de datos correspondiente UCF_Crime a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV, NSL_2D_UBI, NSL_2D_XD).
+- Si queremos ejecutar el script NSL_2D_CCTV, debemos descargar dicho script y su script asociado DATA_CCTV, además también debemos descargar su conjunto de datos correspondiente NTU CCTV-Fights a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV, NSL_2D_UBI, NSL_2D_XD).
 
-3. El tercer paso es configurar los siguientes parametros de los scripts NSL_2D y DATA_:
+3. El tercer paso es configurar los siguientes parametros de los scripts NSL_2D_DatasetName y DATA_DatasetName:
 
-- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D usando la función hub.load().
+- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D_DatasetName usando la función hub.load(). 
 
 ```
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
 ```
 
-- Los siguientes parámetros a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_.
+- Los siguientes parámetros a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_DatasetName.
 
   - Para el script DATA_CCTV las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
@@ -112,32 +112,39 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_splits = 'UCF_Crimes/Action_Regnition_splits/'
     ```
 
-- Los últimos parámetros a configurar son la ruta de los checkpoints para almacenar el modelo pre-entrenado y la ruta donde se almacenará un TensorBoard con la información del entrenamiento del modelo y los archivos .log. Los resultados se almacenará dentro de un directorio llamado 'Results' que se generara automaticamente dentro de la ruta en la cual se haya descargado cada uno de los conjuntos de datos.
+- Los últimos parámetros a configurar son la ruta de los checkpoints para almacenar el modelo pre-entrenado y la ruta donde se almacenará un TensorBoard con la información del entrenamiento del modelo y los archivos .log. Estas rutas se modifican en los scripts NSL_2D_DatasetName. Los resultados se almacenará dentro de un directorio llamado 'Results' que se generará automáticamente dentro de la ruta en la cual se haya descargado cada uno de los conjuntos de datos.
 
-  - Para el conjunto de datos CCTV-Fights las rutas son las siguientes:
+  - Para el conjunto de datos NTU CCTV-Fights, en el script NSL_2D_CCTV, las rutas son las siguientes:
   
     ```
     log_dir = "CCTV-Fights/Results/logs/fit/"
     checkpoint_path = "CCTV-Fights/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos UBI_Fights las rutas son las siguientes:
+  - Para el conjunto de datos UBI_Fights, en el script NSL_2D_UBI, las rutas son las siguientes:
   
     ```
     log_dir = "UBI_Fights/Results/logs/fit/"
     checkpoint_path = "UBI_Fights/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos XD-Violence las rutas son las siguientes:
+  - Para el conjunto de datos XD-Violence, en el script NSL_2D_XD, las rutas son las siguientes:
 
     ```
     log_dir = "XD-Violence/Results/logs/fit/"
     checkpoint_path = "XD-Violence/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos UCF_Crimes las rutas son las siguientes:
+  - Para el conjunto de datos UCF_Crime, en el script NSL_2D_UCF, las rutas son las siguientes:
 
     ```
     log_dir = "UCF_Crimes/Results/logs/fit/"
     checkpoint_path = "UCF_Crimes/Results/logs/checkpoint/"
     ```
+    
+4. El cuarto y último paso es ejecutar el proceso de entrenamiento y evaluación del modelo con el conjunto de datos seleccinado, para cada conjunto de datos hay que ejecutar los siguientes scripts.
+
+- Para el conjunto de datos NTU CCTV-Fights hay que ejecutar el script NSL_2D_CCTV.
+- Para el conjunto de datos UBI_Fights hay que ejecutar el script NSL_2D_UBI.
+- Para el conjunto de datos XD-Violence hay que ejecutar el script NSL_2D_XD.
+- Para el conjunto de datos UCF_Crime hay que ejecutar el script NSL_2D_UCF.
