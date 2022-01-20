@@ -2,8 +2,11 @@
 
 ## Vision Transformer Featured Model For Training.
 
+El modelo que usamos para realizar es un Vision Transformer (ViT) el modelo preentrenado que usamos en los scripts de este repositorio puede descargarse desde el siguiente enlace:
+
   Link: https://www.dropbox.com/sh/yt9xdtwqymrwd7i/AAAx5s7FDSX1V4EiPCxMVJpRa?dl=0
 
+Para la correcta ejecución de los scripts, debe descargarse el modelo ViT y cargarlo mediante la ruta relativa en el script que se desea ejecutar. El proceso se describe en detalle al final de este documento.
 
 ## Datasets
 
