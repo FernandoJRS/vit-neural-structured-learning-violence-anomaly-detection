@@ -51,3 +51,13 @@ El esquema de archivos de este repositorio va asociado por pares y a su vez cada
 - El archivo DATA_UCF carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
 
 ## Run Scripts
+
+Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
+
+1º Descargar el modelo ViT a través del enlace que se proporciona en este documento.
+
+2º Seleccionar los pares de scripts se quiere ejecutar y descargar el dataset correspondiente, ejemplo:
+
+- Si queremos ejecutar el script NSL_2D_CCTV, debemos descargar dicho script y su asociado DATA_CCTV, además también debemos descargar su conjunto de datos correspondiente UCF_Crime a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV, NSL_2D_UBI, NSL_2D_XD).
+
+3º 
