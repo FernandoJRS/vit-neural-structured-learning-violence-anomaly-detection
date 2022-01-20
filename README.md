@@ -156,6 +156,14 @@ En esta sección se muestran los resultados obtenidos por cada uno de los conjun
 |     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy |
 |-----------------|--------------|-----------------------------|----------------------|
 | NTU CCTV-Fights | Optical Flow |         100.00 %	           |        100.00 %      |
-| UBI-Fights      | Optical Flow |         100.00 %	           |        100.00 %      |   
+| UBI_Fights      | Optical Flow |         100.00 %	           |        100.00 %      |   
 | XD-Violence     | Optical Flow |         99.98 %             |        99.98 %       |  
-| UCF-Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |  
+| UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |
+
+
+| UCF_Crime	Iteration | Train Split | Test Split | Sparse Categorical Accuracy | Categorical Accuracy |
+|---------------------|-------------|------------|-----------------------------|----------------------|
+| 01                  | Train_001   | Test_001   | 99.99 %                     | 99.99 %              |
+| 02                  | Train_002   | Test_002   | 99.99 %                     | 99.99 %              |  
+| 03                  | Train_003   | Test_003   | 99.99 %                     | 99.99 %              |  
+| 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |
