@@ -80,7 +80,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_videos = 'CCTV-Fights/Videos/'
     ```
 
-  - Para el script UBI_Fights las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - Para el script DATA_UBI las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_base = 'UBI_Fights/annotation/'
     - path_videos = 'UBI_Fights/videos/'<br/><br/>
@@ -90,7 +90,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_videos = 'UBI_Fights/videos/'
     ```
 
-  - Para el script XD-Violence las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - Para el script DATA_XD las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_base = 'XD-Violence/'
     - path_videos_train = 'XD-Violence/Train/'
@@ -102,7 +102,7 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_videos_test = 'XD-Violence/Test/'<br/><br/>
     ```
 
-  - Para el script UCF_Crimes las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - Para el script DATA_UCF las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
   
     - path_videos = 'UCF_Crimes/Videos/'
     - path_splits = 'UCF_Crimes/Action_Regnition_splits/'<br/><br/>
@@ -112,11 +112,32 @@ loaded_model = hub.load("HubModels/vit_s16_fe_1")
     path_splits = 'UCF_Crimes/Action_Regnition_splits/'
     ```
 
-- Los últimos parámetros a configurar son las rutas de los checkpoints para almacenar el modelo pre-entrenado
+- Los últimos parámetros a configurar son la ruta de los checkpoints para almacenar el modelo pre-entrenado y la ruta donde se almacenará un TensorBoard con la información del entrenamiento del modelo y los archivos .log. Los resultados se almacenará dentro de un directorio llamado 'Results' que se generara automaticamente dentro de la ruta en la cual se haya descargado cada uno de los conjuntos de datos.
 
+  - Para el conjunto de datos CCTV-Fights las rutas son las siguientes:
+  
+    ```
+    log_dir = "CCTV-Fights/Results/logs/fit/"
+    checkpoint_path = "CCTV-Fights/Results/logs/checkpoint/"
+    ```
+    
+  - Para el conjunto de datos UBI_Fights las rutas son las siguientes:
+  
+    ```
+    log_dir = "UBI_Fights/Results/logs/fit/"
+    checkpoint_path = "UBI_Fights/Results/logs/checkpoint/"
+    ```
+    
+  - Para el conjunto de datos XD-Violence las rutas son las siguientes:
 
+    ```
+    log_dir = "XD-Violence/Results/logs/fit/"
+    checkpoint_path = "XD-Violence/Results/logs/checkpoint/"
+    ```
+    
+  - Para el conjunto de datos UCF_Crimes las rutas son las siguientes:
 
-
-
-
-
+    ```
+    log_dir = "UCF_Crimes/Results/logs/fit/"
+    checkpoint_path = "UCF_Crimes/Results/logs/checkpoint/"
+    ```
