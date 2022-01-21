@@ -25,10 +25,11 @@ En esta sección se presentan los requisitos necesarios para ejecutar los script
   
   File: requirements.py <br/>
   
-  pip install tensorflow==2.7.0 <br/>
-  pip install scikit-learn <br/>
-  pip install neural_structured_learning <br/>
-  pip install opencv-python==4.5.5.62 <br/>
+  !pip install --upgrade tensorflow_hub
+  !pip install tensorflow==2.7.0 <br/>
+  !pip install scikit-learn <br/>
+  !pip install neural_structured_learning <br/>
+  !pip install opencv-python==4.5.5.62 <br/>
 
 ## Files Scheme
 
