@@ -157,20 +157,20 @@ En esta sección se muestran los resultados obtenidos por cada uno de los conjun
 En la primera tabla se muestran los resultados de una iteración para la partición entre entrenamiento, validación y testeo que viene predefinida para cada uno de los conjuntos de datos. El conjunto de datos UBI_Fights no posee una partición predefinida, por lo que en el archivo DATA_UBI.py, realizamos la partición en entrenamiento, validación y test.
 
 
-|     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy |
-|-----------------|--------------|-----------------------------|----------------------|
-| NTU CCTV-Fights | Optical Flow |         100.00 %	           |        100.00 %      |
-| UBI_Fights      | Optical Flow |         100.00 %	           |        100.00 %      |   
-| XD-Violence     | Optical Flow |         99.98 %             |        99.98 %       |  
-| UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |
+|     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
+|-----------------|--------------|-----------------------------|----------------------|----------------|
+| NTU CCTV-Fights | Optical Flow |         100.00 %	           |        100.00 %      |    0,040258 s  |
+| UBI_Fights      | Optical Flow |         100.00 %	           |        100.00 %      |    0,042453 s  |
+| XD-Violence     | Optical Flow |         99.98 %             |        99.98 %       |    0,040882 s  |
+| UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |    0,041747 s  |
 
 
 El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la segunda tabla se muestran los resultados para cada partición. En la primera tabla los resultados corresponden a la partición Train_001 / Test_001.
 
 
-| UCF_Crime	Iteration | Train Split | Test Split | Sparse Categorical Accuracy | Categorical Accuracy |
-|---------------------|-------------|------------|-----------------------------|----------------------|
-| 01                  | Train_001   | Test_001   | 99.99 %                     | 99.99 %              |
-| 02                  | Train_002   | Test_002   | 99.99 %                     | 99.99 %              |  
-| 03                  | Train_003   | Test_003   | 99.99 %                     | 99.99 %              |  
-| 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |
+| UCF_Crime	Iteration | Train Split | Test Split | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
+|---------------------|-------------|------------|-----------------------------|----------------------|----------------|
+| 01                  | Train_001   | Test_001   | 99.99 %                     | 99.99 %              |    0,040956 s  |
+| 02                  | Train_002   | Test_002   | 99.99 %                     | 99.99 %              |    0,041358 s  |  
+| 03                  | Train_003   | Test_003   | 99.99 %                     | 99.99 %              |    0,041226 s  |  
+| 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |    0,040693 s  |
