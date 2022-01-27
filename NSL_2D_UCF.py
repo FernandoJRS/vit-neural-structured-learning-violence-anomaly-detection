@@ -5,11 +5,11 @@ from Data_UCF import *
 
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
 model = tf.keras.Sequential(
-    [hub.KerasLayer(loaded_model, trainable=False),
+    [tf.keras.layers.InputLayer((width, height, channels)),
+     hub.KerasLayer(loaded_model, trainable=True),
      tf.keras.layers.Dense(16),
      tf.keras.layers.Dense(14, activation='softmax')])
 
-model.build((None, width, height, channels))
 model.summary()
 
 adv_config = nsl.configs.make_adv_reg_config(multiplier=0.2,
