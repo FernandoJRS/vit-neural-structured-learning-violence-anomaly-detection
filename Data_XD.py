@@ -119,7 +119,7 @@ def generatorTrainData(batch_size_train=16):
     while True:
         for tp in train_total:
             frame = cv2.resize(tp[0], (width, height), interpolation=cv2.INTER_AREA)
-            frame = 127.5 - (frame.astype('float32') / 127.5)
+            frame = (frame.astype('float32') - 127.5) / 127.5
             label = tp[1]
             for count in range(int(len(train_total) / batch_size_train)):
                 batch_start = batch_size_train * count
@@ -144,7 +144,7 @@ def generatorTestData(batch_size_test=16):
     while True:
         for tp in test_total:
             frame = cv2.resize(tp[0], (width, height), interpolation=cv2.INTER_AREA)
-            frame = 127.5 - (frame.astype('float32') / 127.5)
+            frame = (frame.astype('float32') - 127.5) / 127.5
             label = tp[1]
             for count in range(int(len(test_total) / batch_size_test)):
                 batch_start = batch_size_test * count
