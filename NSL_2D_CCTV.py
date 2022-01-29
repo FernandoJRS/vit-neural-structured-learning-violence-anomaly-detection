@@ -1,6 +1,7 @@
 import neural_structured_learning as nsl
 import time
 import tensorflow_hub as hub
+import datetime
 from Data_CCTV import *
 
 
@@ -26,10 +27,10 @@ adv_model.compile(optimizer=tf.keras.optimizers.Adam(),
                   metrics=[tf.keras.metrics.SparseCategoricalAccuracy(),
                            tf.keras.metrics.CategoricalAccuracy()])
 
-log_dir = "CCTV-Fights/Results/logs/fit/"
+log_dir = "CCTV-Fights/Results/logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 
-checkpoint_path = "CCTV-Fights/Results/logs/checkpoint/"
+checkpoint_path = "CCTV-Fights/Results/logs/checkpoint/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                  save_weights_only=True,
                                                  verbose=1)
