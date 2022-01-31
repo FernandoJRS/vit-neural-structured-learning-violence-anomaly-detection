@@ -176,7 +176,10 @@ El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la s
 | 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |    0,040693 s  |
 
 
-CCTV Confusion Matrix      |  Confusion Matrix         |  Confusion Matrix         |  Confusion Matrix
+En la siguiente tabla se muestran las matrices de confusión para cada uno de los conjuntos de datos.
+
+
+CCTV Confusion Matrix      | UBI Confusion Matrix      | XD Confusion Matrix       | UCF Confusion Matrix
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![CCTV_CM](figures/CCTV_CM.png?raw=True "CCTV_CM")  |  ![UBI_CM](figures/UBI_CM.png?raw=True "UBI_CM") | ![XD_CM](figures/XD_CM.png?raw=True "XD_CM") | ![UCF_CM](figures/UCF_CM.png?raw=True "UCF_CM")
 
