@@ -2,7 +2,7 @@
 
 ## Vision Transformer Featured Model For Training.
 
-El modelo que usamos para realizar es un Vision Transformer (ViT) el modelo preentrenado que usamos en los scripts de este repositorio puede descargarse desde el siguiente enlace:
+El modelo que usamos para realizar es un Vision Transformer (ViT). El modelo preentrenado que usamos en los scripts de este repositorio puede descargarse desde el siguiente enlace:
 
   Link: https://tfhub.dev/sayakpaul/vit_b8_fe/1
 
