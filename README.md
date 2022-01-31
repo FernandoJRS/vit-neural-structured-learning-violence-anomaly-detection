@@ -187,7 +187,7 @@ CCTV Confusion Matrix      | UBI Confusion Matrix      | XD Confusion Matrix    
 
 Un ejemplo del funcionamiento del modelo sobre varios videos se puede encontrar en los siguientes enlances.
 
-Link 1: https://www.dropbox.com/s/b0ila0rlr5f9a2k/fight0005.avi?dl=0
-Link 2: https://www.dropbox.com/s/sfit3lrco9rbwe2/fight0033.avi?dl=0
+Link 1: https://www.dropbox.com/s/b0ila0rlr5f9a2k/fight0005.avi?dl=0 <br/>
+Link 2: https://www.dropbox.com/s/sfit3lrco9rbwe2/fight0033.avi?dl=0 <br/>
 Link 3: https://www.dropbox.com/s/hfo63facdg4kbnu/fight0128.avi?dl=0
 
