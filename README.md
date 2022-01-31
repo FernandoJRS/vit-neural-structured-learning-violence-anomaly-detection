@@ -183,18 +183,11 @@ CCTV Confusion Matrix      | UBI Confusion Matrix      | XD Confusion Matrix    
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![CCTV_CM](figures/CCTV_CM.png?raw=True "CCTV_CM")  |  ![UBI_CM](figures/UBI_CM.png?raw=True "UBI_CM") | ![XD_CM](figures/XD_CM.png?raw=True "XD_CM") | ![UCF_CM](figures/UCF_CM.png?raw=True "UCF_CM")
 
-
-
-
-
-
-
-
-
-
-
 ## Performace
 
-Un ejemplo del funcionamiento del modelo sobre un video se puede encontrar en el siguiente enlance.
+Un ejemplo del funcionamiento del modelo sobre varios videos se puede encontrar en los siguientes enlances.
 
-Link: https://www.dropbox.com/s/b0ila0rlr5f9a2k/fight0005.avi?dl=0
+Link 1: https://www.dropbox.com/s/b0ila0rlr5f9a2k/fight0005.avi?dl=0
+Link 2: https://www.dropbox.com/s/sfit3lrco9rbwe2/fight0033.avi?dl=0
+Link 3: https://www.dropbox.com/s/hfo63facdg4kbnu/fight0128.avi?dl=0
+
