@@ -174,3 +174,5 @@ El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la s
 | 02                  | Train_002   | Test_002   | 99.99 %                     | 99.99 %              |    0,041358 s  |  
 | 03                  | Train_003   | Test_003   | 99.99 %                     | 99.99 %              |    0,041226 s  |  
 | 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |    0,040693 s  |
+
+## Performace
