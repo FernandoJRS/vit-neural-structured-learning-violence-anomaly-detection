@@ -176,3 +176,7 @@ El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la s
 | 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |    0,040693 s  |
 
 ## Performace
+
+Un ejemplo del funcionamiento del modelo sobre un video se puede encontrar en el siguiente enlance.
+
+Link: https://www.dropbox.com/s/b0ila0rlr5f9a2k/fight0005.avi?dl=0
