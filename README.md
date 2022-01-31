@@ -175,6 +175,14 @@ El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la s
 | 03                  | Train_003   | Test_003   | 99.99 %                     | 99.99 %              |    0,041226 s  |  
 | 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |    0,040693 s  |
 
+![CCTV_CM](figures/CCTV_CM.png?raw=True "CCTV_CM")
+
+![UBI_CM](figures/UBI_CM.png?raw=True "UBI_CM")
+
+![UCF_CM](figures/UCF_CM.png?raw=True "UCF_CM")
+
+![XD_CM](figures/XD_CM.png?raw=True "XD_CM")
+
 ## Performace
 
 Un ejemplo del funcionamiento del modelo sobre un video se puede encontrar en el siguiente enlance.
