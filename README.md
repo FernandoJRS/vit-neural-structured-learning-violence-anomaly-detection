@@ -66,7 +66,7 @@ Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
 - El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D_DatasetName usando la función hub.load(). 
 
 ```
-loaded_model = hub.load("HubModels/vit_s16_fe_1")
+loaded_model = hub.load("HubModels/vit_b8_fe_1")
 ```
 
 - Los siguientes parámetros a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_DatasetName.
