@@ -165,7 +165,7 @@ En la primera tabla se muestran los resultados de una iteración para la partici
 | UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |    0,041747 s  |
 
 
-El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la segunda tabla se muestran los resultados para cada partición. En la primera tabla los resultados corresponden a la partición Train_001 / Test_001.
+El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la segunda tabla se muestran los resultados para cada partición. En la primera tabla los resultados corresponden a la partición Train_001/Test_001.
 
 
 | UCF_Crime	Iteration | Train Split | Test Split | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
@@ -182,6 +182,11 @@ En la siguiente tabla se muestran las matrices de confusión para cada uno de lo
 CCTV Confusion Matrix      | UBI Confusion Matrix      | XD Confusion Matrix       | UCF Confusion Matrix
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![CCTV_CM](figures/CCTV_CM.png?raw=True "CCTV_CM")  |  ![UBI_CM](figures/UBI_CM.png?raw=True "UBI_CM") | ![XD_CM](figures/XD_CM.png?raw=True "XD_CM") | ![UCF_CM](figures/UCF_CM.png?raw=True "UCF_CM")
+
+En la siguiente tabla se muestran las matrices de confusión para una experimentación cruzada entre los datasets CCTV-Fights y UBI-Fights en los cuales se usa los modelos pre-entrenados con cada uno de los datasets para testear el otro.
+
+CCTV (Train) - UBI (Test) Confusion Matrix  | CCTV (Test) - UBI (Train) Confusion Matrix      |
+:------------------------------------------:|:-----------------------------------------------:|
 
 ## Performance
 
