@@ -187,6 +187,7 @@ En la siguiente tabla se muestran las matrices de confusión para una experiment
 
 CCTV (Train) - UBI (Test) Confusion Matrix  | CCTV (Test) - UBI (Train) Confusion Matrix      |
 :------------------------------------------:|:-----------------------------------------------:|
+![CCTV_UBI_CM](figures/CCTV-UBI CM.png?raw=True "CCTV_UBI_CM") | ![UBI_CCTV_CM](figures/UBI-CCTV CM.png?raw=True "UBI_CCTV_CM")
 
 ## Performance
 
