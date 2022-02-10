@@ -2,6 +2,8 @@ import neural_structured_learning as nsl
 import time
 import tensorflow_hub as hub
 import datetime
+import matplotlib.pyplot as plt
+from sklearn import metrics
 from Data_XD import *
 
 
@@ -12,7 +14,10 @@ vit_model = tf.keras.Sequential(
      tf.keras.layers.Dense(16),
      tf.keras.layers.Dense(7, activation='softmax')])
 
-vit_model.summary()
+
+tf.keras.backend.clear_session()
+tf.config.optimizer.set_jit(True)
+
 
 adv_config = nsl.configs.make_adv_reg_config(multiplier=0.2,
                                              adv_step_size=0.05,
@@ -24,8 +29,7 @@ adv_model = nsl.keras.AdversarialRegularization(vit_model,
 
 adv_model.compile(optimizer=tf.keras.optimizers.Adam(),
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(),
-                  metrics=[tf.keras.metrics.SparseCategoricalAccuracy(),
-                           tf.keras.metrics.CategoricalAccuracy()])
+                  metrics=[tf.keras.metrics.SparseCategoricalAccuracy(), tf.keras.metrics.CategoricalAccuracy()])
 
 log_dir = "XD-Violence/Results/logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
@@ -36,11 +40,12 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                  verbose=1)
 
 start_time_train = time.time()
-
+initial_weights = adv_model.get_weights()
 adv_model.fit(generatorTrainData(batch_size_train=16),
               epochs=1,
               steps_per_epoch=int(len(train_total) / 16),
               callbacks=[tensorboard_callback, cp_callback])
+adv_model.set_weights(initial_weights)
 print('Training time per epoch: ' + str((time.time() - start_time_train) / 1))
 
 start_time_test = time.time()
