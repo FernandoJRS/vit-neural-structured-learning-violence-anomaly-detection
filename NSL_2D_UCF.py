@@ -2,8 +2,6 @@ import neural_structured_learning as nsl
 import time
 import tensorflow_hub as hub
 import datetime
-import matplotlib.pyplot as plt
-from sklearn import metrics
 from Data_UCF import *
 
 
