@@ -7,13 +7,16 @@ import os
 path_base = 'XD-Violence/'
 path_videos_train = 'XD-Violence/Train/'
 path_videos_test = 'XD-Violence/Test/'
+path_videos_annotations = 'XD-Violence/annotations.txt'
 
 videos_train = os.listdir(path_videos_train)
 videos_test = os.listdir(path_videos_test)
+videos_test_annotations = open(path_videos_annotations)
 
 width = 224
 height = 224
 channels = 3
+
 
 def read_video_optical_flow(vid, width, height, resize=False):
     video_frames_optical_flow = list()
@@ -68,6 +71,27 @@ def read_video(vid, width, height, resize=False):
     return video_frames
 
 
+def pairwise(iterable):
+    a = iter(iterable)
+    return zip(a, a)
+
+
+def frame_range_annotations(test_annotations):
+    annotatios_ranges = list()
+    for line in test_annotations.readlines():
+        aux = list()
+        rline = line.split(' ')
+        ranges = rline[1:len(rline)]
+        for range in ranges:
+            if '\n' in range:
+                aux.append(int(range.split('\n')[0]))
+            else:
+                aux.append(int(range))
+        annotatios_ranges.append(aux)
+    return annotatios_ranges
+
+
+
 train_total = []
 for i in range(len(videos_train)):
     video_frames = read_video_optical_flow(path_videos_train + videos_train[i], 20, 20, resize=True)
@@ -91,25 +115,52 @@ random.shuffle(train_total)
 
 
 test_total = []
+test_annotations = frame_range_annotations(videos_test_annotations)
+
 for i in range(len(videos_test)):
     video_frames = read_video_optical_flow(path_videos_test + videos_test[i], 20, 20, resize=True)
+    violence_ranges = test_annotations[i]
 
     for j in range(len(video_frames)):
         fr = video_frames[j]
         if 'A' in videos_test[i]:
             test_total.append((fr, 0))
         if 'B1' in videos_test[i]:
-            test_total.append((fr, 1))
+            for p, q in pairwise(violence_ranges):
+                if j in range(p, q):
+                    test_total.append((fr, 1))
+                else:
+                    test_total.append((fr, 0))
         if 'B2' in videos_test[i]:
-            test_total.append((fr, 2))
+            for p, q in pairwise(violence_ranges):
+                if j in range(p, q):
+                    test_total.append((fr, 2))
+                else:
+                    test_total.append((fr, 0))
         if 'B4' in videos_test[i]:
-            test_total.append((fr, 3))
+            for p, q in pairwise(violence_ranges):
+                if j in range(p, q):
+                    test_total.append((fr, 3))
+                else:
+                    test_total.append((fr, 0))
         if 'B5' in videos_test[i]:
-            test_total.append((fr, 4))
+            for p, q in pairwise(violence_ranges):
+                if j in range(p, q):
+                    test_total.append((fr, 4))
+                else:
+                    test_total.append((fr, 0))
         if 'B6' in videos_test[i]:
-            test_total.append((fr, 5))
+            for p, q in pairwise(violence_ranges):
+                if j in range(p, q):
+                    test_total.append((fr, 5))
+                else:
+                    test_total.append((fr, 0))
         if 'G' in videos_test[i]:
-            test_total.append((fr, 6))
+            for p, q in pairwise(violence_ranges):
+                if j in range(p, q):
+                    test_total.append((fr, 6))
+                else:
+                    test_total.append((fr, 0))
 random.shuffle(test_total)
 
 
