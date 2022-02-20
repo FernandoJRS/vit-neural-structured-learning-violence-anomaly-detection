@@ -193,6 +193,15 @@ UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Ma
 :------------------------------------------:|:-----------------------------------------------:|
 ![UCF_XD_CM](figures/UCF_XD_CM.png?raw=True "UCF_XD_CM") | ![XD_UCF_CM](figures/XD_UCF_CM.png?raw=True "XD_UCF_CM")
 
+## Ablation Study
+
+|     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
+|-----------------|--------------|-----------------------------|----------------------|----------------|
+| NTU CCTV-Fights | Optical Flow |         90.45% 	           |        90.45%        |    0,040374 s  |
+| UBI_Fights      | Optical Flow |         %	           |        %      |    s  |
+| XD-Violence     | Optical Flow |         %             |        %      |    s  |
+| UCF_Crime	      | Optical Flow |         %	           |        %      |    s  |
+
 ## Performance
 
 Un ejemplo del funcionamiento del modelo sobre varios videos se puede encontrar en los siguientes enlances.
