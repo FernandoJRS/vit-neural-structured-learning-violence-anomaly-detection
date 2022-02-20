@@ -27,7 +27,7 @@ adv_model = nsl.keras.AdversarialRegularization(vit_model,
 
 adv_model.compile(optimizer=tf.keras.optimizers.Adam(),
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(),
-                  metrics=[tf.keras.metrics.SparseCategoricalAccuracy(), tf.keras.metrics.CategoricalAccuracy()])
+                  metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
 
 log_dir = "XD-Violence/Results/logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
