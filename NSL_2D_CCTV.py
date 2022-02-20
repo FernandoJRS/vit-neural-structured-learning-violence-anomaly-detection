@@ -25,7 +25,7 @@ tf.config.optimizer.set_jit(True)
 
 adv_model.compile(optimizer=tf.keras.optimizers.Adam(),
                   loss=tf.keras.losses.SparseCategoricalCrossentropy(),
-                  metrics=[tf.keras.metrics.SparseCategoricalAccuracy(), tf.keras.metrics.CategoricalAccuracy()])
+                  metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
 
 log_dir = "CCTV-Fights/Results/logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
