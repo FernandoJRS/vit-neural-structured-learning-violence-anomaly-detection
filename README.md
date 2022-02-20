@@ -95,7 +95,8 @@ loaded_model = hub.load("HubModels/vit_b8_fe_1")
   
     - path_base = 'XD-Violence/'
     - path_videos_train = 'XD-Violence/Train/'
-    - path_videos_test = 'XD-Violence/Test/'<br/><br/>
+    - path_videos_test = 'XD-Violence/Test/'
+    - path_videos_annotations = 'XD-Violence/annotations.txt'<br/><br/>
     
     ```
     path_base = 'XD-Violence/'
