@@ -199,10 +199,10 @@ UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Ma
 
 |     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
 |-----------------|--------------|-----------------------------|----------------------|----------------|
-| NTU CCTV-Fights | Optical Flow |         90.45% 	           |        90.45%        |    0,040374 s  |
-| UBI_Fights      | Optical Flow |         %	           |        %      |    s  |
-| XD-Violence     | Optical Flow |         %             |        %      |    s  |
-| UCF_Crime	      | Optical Flow |         %	           |        %      |    s  |
+| NTU CCTV-Fights | Optical Flow |         90.45 % 	           |        90.45%        |    0,040374 s  |
+| UBI_Fights      | Optical Flow |         89.76 %	           |        89.76 %       |    0,041883 s  |
+| XD-Violence     | Optical Flow |         %                   |        %             |             s  |
+| UCF_Crime	      | Optical Flow |         %	                 |        %             |             s  |
 
 ## Performance
 
