@@ -197,6 +197,8 @@ UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Ma
 
 ## Ablation Study
 
+En esta sección se presentan un estudio de ablacion en el que se emplea el ViT sin aplicar el aprendizaje neuronal estructurado, simplemente aplicando aprendizaje supervisado. Los resultados obtenidos se muestran en la siguiente tabla:
+
 |     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
 |-----------------|--------------|-----------------------------|----------------------|----------------|
 | NTU CCTV-Fights | Optical Flow |         90.45 % 	           |        90.45%        |    0,040374 s  |
