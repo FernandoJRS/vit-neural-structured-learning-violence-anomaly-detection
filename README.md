@@ -102,6 +102,7 @@ loaded_model = hub.load("HubModels/vit_b8_fe_1")
     path_base = 'XD-Violence/'
     path_videos_train = 'XD-Violence/Train/'
     path_videos_test = 'XD-Violence/Test/'
+    path_videos_annotations = 'XD-Violence/annotations.txt'
     ```
 
   - Para el script DATA_UCF.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
