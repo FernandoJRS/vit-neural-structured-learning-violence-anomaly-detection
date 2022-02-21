@@ -204,7 +204,7 @@ En esta sección se presentan un estudio de ablacion en el que se emplea el ViT 
 | NTU CCTV-Fights | Optical Flow |         90.45 % 	           |        90.45%        |    0,040374 s  |
 | UBI_Fights      | Optical Flow |         89.76 %	           |        89.76 %       |    0,041883 s  |
 | XD-Violence     | Optical Flow |         87.23 %             |        87.23 %       |    0,041159 s  |
-| UCF_Crime	      | Optical Flow |         %	                 |        %             |             s  |
+| UCF_Crime	      | Optical Flow |         87.52 %	           |        87.52 %       |    0,040981 s  |
 
 ## Performance
 
