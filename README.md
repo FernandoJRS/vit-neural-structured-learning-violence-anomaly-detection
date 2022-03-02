@@ -197,6 +197,10 @@ UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Ma
 
 En la siguiente tabla se muestran las matrices de confusión para una experimentación cruzada entre los datasets multiclase UCF-Crime y XD-Violence en los cuales se usa los modelos entrenados solo con las clases coincidente en ambos conjuntos de datos.
 
+UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Matrix      |
+:------------------------------------------:|:-----------------------------------------------:|
+![UCF_XD_M_CM](figures/UCF_XD_M_CM.png?raw=True "UCF_XD_CM") | ![XD_UCF_M_CM](figures/XD_UCF_M_CM.png?raw=True "XD_UCF_M_CM")
+
 ## Ablation Study
 
 En esta sección se presentan un estudio de ablacion en el que se emplea el ViT sin aplicar el aprendizaje neuronal estructurado, simplemente aplicando aprendizaje supervisado. Los resultados obtenidos se muestran en la siguiente tabla:
