@@ -163,7 +163,7 @@ En la primera tabla se muestran los resultados de una iteración para la partici
 | NTU CCTV-Fights | Optical Flow |         100.00 %	           |        100.00 %      |    0,040258 s  |
 | UBI_Fights      | Optical Flow |         100.00 %	           |        100.00 %      |    0,042453 s  |
 | XD-Violence     | Optical Flow |         99.98 %             |        99.98 %       |    0,040882 s  |
-| UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |    0,041747 s  |
+| UCF_Crime	      | Optical Flow |         99.99 %	           |        99.99 %       |    0,040956 s  |
 
 El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la segunda tabla se muestran los resultados para cada partición. En la primera tabla los resultados corresponden a la partición Train_001/Test_001.
 
