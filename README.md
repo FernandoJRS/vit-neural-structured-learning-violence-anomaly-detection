@@ -181,13 +181,13 @@ En la siguiente tabla se muestran las matrices de confusión para cada uno de lo
 
 CCTV Confusion Matrix      | UBI Confusion Matrix      | XD Confusion Matrix       | UCF Confusion Matrix
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![CCTV_CM](figures/CCTV_CM.png?raw=True "CCTV_CM")  |  ![UBI_CM](figures/UBI_CM.png?raw=True "UBI_CM") | ![XD_CM](figures/XD_CM.png?raw=True "XD_CM") | ![UCF_CM](figures/UCF_CM.png?raw=True "UCF_CM")
+  |  |  | 
 
 En la siguiente tabla se muestran las matrices de confusión para una experimentación cruzada entre los datasets monoclase CCTV-Fights y UBI-Fights en los cuales se usa los modelos pre-entrenados con cada uno de los datasets para testear el otro.
 
 CCTV (Train) - UBI (Test) Confusion Matrix  | UBI (Train) - CCTV (Test) Confusion Matrix      |
 :------------------------------------------:|:-----------------------------------------------:|
-![CCTV_UBI_CM](figures/CCTV_UBI_CM.png?raw=True "CCTV_UBI_CM") | ![UBI_CCTV_CM](figures/UBI_CCTV_CM.png?raw=True "UBI_CCTV_CM")
+ | 
 
 En la siguiente tabla se muestran las matrices de confusión para una experimentación cruzada entre los datasets multiclase UCF-Crime y XD-Violence en los cuales se usa los modelos pre-entrenados con cada uno de los datasets para testear el otro.
 
@@ -199,7 +199,7 @@ En la siguiente tabla se muestran las matrices de confusión para una experiment
 
 UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Matrix      |
 :------------------------------------------:|:-----------------------------------------------:|
-![UCF_XD_M_CM](figures/UCF_XD_M_CM.png?raw=True "UCF_XD_CM") | ![XD_UCF_M_CM](figures/XD_UCF_M_CM.png?raw=True "XD_UCF_M_CM")
+ | 
 
 ## Ablation Study
 
