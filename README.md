@@ -187,7 +187,7 @@ En la siguiente tabla se muestran las matrices de confusión para una experiment
 
 CCTV (Train) - UBI (Test) Confusion Matrix  | UBI (Train) - CCTV (Test) Confusion Matrix      |
 :------------------------------------------:|:-----------------------------------------------:|
- | 
+![CCTV_UBI_CM](figures/CCTV_UBI_CM.png?raw=True "CCTV_UBI_CM") | ![UBI_CCTV_CM](figures/UBI_CCTV_CM.png?raw=True "UBI_CCTV_CM")
 
 En la siguiente tabla se muestran las matrices de confusión para una experimentación cruzada entre los datasets multiclase UCF-Crime y XD-Violence en los cuales se usa los modelos pre-entrenados con cada uno de los datasets para testear el otro.
 
