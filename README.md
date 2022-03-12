@@ -193,7 +193,7 @@ En la siguiente tabla se muestran las matrices de confusión para una experiment
 
 UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Matrix      |
 :------------------------------------------:|:-----------------------------------------------:|
-![UCF_XD_CMM](figures/UCF_XD_CMM.png?raw=True "UCF_XD_CMM") | ![XD_UCF_CMM](figures/XD_UCF_CM.png?raw=True "XD_UCF_CMM")
+![UCF_XD_CMM](figures/UCF_XD_CMM.png?raw=True "UCF_XD_CMM") | ![XD_UCF_CMM](figures/XD_UCF_CMM.png?raw=True "XD_UCF_CMM")
 
 ## Ablation Study
 
