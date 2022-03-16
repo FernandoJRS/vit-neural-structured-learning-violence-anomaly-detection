@@ -5,7 +5,7 @@ import datetime
 from Data_CCTV import *
 
 
-loaded_model = hub.load("HubModels/vit_b8_fe_1")
+loaded_model = hub.load(""HubModels/vit_s16_fe_1"")
 vit_model = tf.keras.Sequential(
     [tf.keras.layers.InputLayer(input_shape=(width, height, channels)),
      hub.KerasLayer(loaded_model, trainable=True),
