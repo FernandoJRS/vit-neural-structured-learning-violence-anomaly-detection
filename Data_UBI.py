@@ -13,6 +13,9 @@ annotations = os.listdir(path_base)
 videos = os.listdir(path_videos + 'fight/') + os.listdir(path_videos + 'normal/')
 label_videos = list()
 
+pos = 0
+neg = 0
+
 for v in videos:
     if 'F' in v:
         label_videos.append(1)
@@ -153,72 +156,75 @@ random.shuffle(test_total)
 
 def generatorTrainData(batch_size_train=16):
     while True:
-        for tp in train_total:
-            frame = cv2.resize(tp[0], (width, height), interpolation=cv2.INTER_AREA)
-            frame = (frame.astype('float32') - 127.5) / 127.5
-            label = tp[1]
-            for count in range(int(len(train_total) / batch_size_train)):
-                batch_start = batch_size_train * count
-                batch_stop = batch_size_train + (batch_size_train * count)
-                lx = []
-                ly = []
-                for i in range(batch_start, batch_stop):
-                    lx.append(frame)
-                    ly.append(label)
+        for count in range(int(len(train_total) / batch_size_train)):
+            batch_start = batch_size_train * count
+            batch_stop = batch_size_train + (batch_size_train * count)
+            lx = []
+            ly = []
+            for i in range(batch_start, batch_stop):
+                frame = cv2.resize(train_total[i][0], (224, 224))
+                frame = (frame.astype('float32') - 127.5) / 127.5
+                label = train_total[i][1]
 
-                lx = np.array(lx).astype('float32')
-                ly = np.array(ly).astype('float32')
+                lx.append(frame)
+                ly.append(label)
 
-                x = tf.convert_to_tensor(lx)
-                y = tf.convert_to_tensor(ly)
-                yield {'feature': x, 'label': y}
+            x = np.array(lx).astype('float32')
+            y = np.array(ly).astype('float32')
+
+            x = tf.convert_to_tensor(x)
+            y = tf.convert_to_tensor(y)
+
+            yield {'feature': x, 'label': y}
 
 
 # Validation
 
 def generatorValidationData(batch_size_train=16):
     while True:
-        for tp in validation_total:
-            frame = cv2.resize(tp[0], (width, height), interpolation=cv2.INTER_AREA)
-            frame = (frame.astype('float32') - 127.5) / 127.5
-            label = tp[1]
-            for count in range(int(len(validation_total) / batch_size_train)):
-                batch_start = batch_size_train * count
-                batch_stop = batch_size_train + (batch_size_train * count)
-                lx = []
-                ly = []
-                for i in range(batch_start, batch_stop):
-                    lx.append(frame)
-                    ly.append(label)
+        for count in range(int(len(validation_total) / batch_size_train)):
+            batch_start = batch_size_train * count
+            batch_stop = batch_size_train + (batch_size_train * count)
+            lx = []
+            ly = []
+            for i in range(batch_start, batch_stop):
+                frame = cv2.resize(validation_total[i][0], (224, 224))
+                frame = (frame.astype('float32') - 127.5) / 127.5
+                label = validation_total[i][1]
 
-                lx = np.array(lx).astype('float32')
-                ly = np.array(ly).astype('float32')
+                lx.append(frame)
+                ly.append(label)
 
-                x = tf.convert_to_tensor(lx)
-                y = tf.convert_to_tensor(ly)
-                yield {'feature': x, 'label': y}
+            x = np.array(lx).astype('float32')
+            y = np.array(ly).astype('float32')
+
+            x = tf.convert_to_tensor(x)
+            y = tf.convert_to_tensor(y)
+
+            yield {'feature': x, 'label': y}
 
 
 # Test
 
 def generatorTestData(batch_size_test=16):
     while True:
-        for tp in test_total:
-            frame = cv2.resize(tp[0], (width, height), interpolation=cv2.INTER_AREA)
-            frame = (frame.astype('float32') - 127.5) / 127.5
-            label = tp[1]
-            for count in range(int(len(test_total) / batch_size_test)):
-                batch_start = batch_size_test * count
-                batch_stop = batch_size_test + (batch_size_test * count)
-                lx = []
-                ly = []
-                for i in range(batch_start, batch_stop):
-                    lx.append(frame)
-                    ly.append(label)
+        for count in range(int(len(test_total) / batch_size_test)):
+            batch_start = batch_size_test * count
+            batch_stop = batch_size_test + (batch_size_test * count)
+            lx = []
+            ly = []
+            for i in range(batch_start, batch_stop):
+                frame = cv2.resize(test_total[i][0], (224, 224))
+                frame = (frame.astype('float32') - 127.5) / 127.5
+                label = test_total[i][1]
 
-                lx = np.array(lx).astype('float32')
-                ly = np.array(ly).astype('float32')
+                lx.append(frame)
+                ly.append(label)
 
-                x = tf.convert_to_tensor(lx)
-                y = tf.convert_to_tensor(ly)
-                yield {'feature': x, 'label': y}
+            x = np.array(lx).astype('float32')
+            y = np.array(ly).astype('float32')
+
+            x = tf.convert_to_tensor(x)
+            y = tf.convert_to_tensor(y)
+
+            yield {'feature': x, 'label': y}

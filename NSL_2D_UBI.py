@@ -5,9 +5,11 @@ import datetime
 from Data_UBI import *
 
 
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
 loaded_model = hub.load("HubModels/vit_s16_fe_1")
 vit_model = tf.keras.Sequential(
-    [tf.keras.layers.InputLayer((width, height, channels)),
+    [tf.keras.layers.InputLayer(input_shape=(width, height, channels), name='feature'),
      hub.KerasLayer(loaded_model, trainable=True),
      tf.keras.layers.Dense(16),
      tf.keras.layers.Dense(2, activation='softmax')])
@@ -21,14 +23,12 @@ adv_model = nsl.keras.AdversarialRegularization(vit_model,
                                                 label_keys=['label'],
                                                 adv_config=adv_config)
 
-
 tf.keras.backend.clear_session()
 tf.config.optimizer.set_jit(True)
 
-
-adv_model.compile(optimizer=tf.keras.optimizers.Adam(),
-                  loss=tf.keras.losses.SparseCategoricalCrossentropy(),
-                  metrics=[tf.keras.metrics.SparseCategoricalAccuracy()])
+adv_model.compile(optimizer='adam',
+                  loss='sparse_categorical_crossentropy',
+                  metrics=['accuracy'])
 
 log_dir = "UBI_Fights/Results/logs/fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
@@ -41,14 +41,13 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
 start_time_train = time.time()
 initial_weights = adv_model.get_weights()
 adv_model.fit(generatorTrainData(batch_size_train=16),
-              epochs=5,
+              epochs=100,
               steps_per_epoch=int(len(train_total) / 16),
               validation_data=generatorValidationData(batch_size_train=16),
               validation_steps=int(len(validation_total) / 16),
               callbacks=[tensorboard_callback, cp_callback])
 adv_model.set_weights(initial_weights)
-print('Training time per epoch: ' + str((time.time() - start_time_train) / 5))
-
+print('Training time per epoch: ' + str((time.time() - start_time_train) / 100))
 
 start_time_test = time.time()
 adv_model.evaluate(generatorTestData(batch_size_test=16),
