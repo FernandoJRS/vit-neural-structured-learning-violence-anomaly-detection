@@ -40,12 +40,10 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
                                                  verbose=1)
 
 start_time_train = time.time()
-initial_weights = adv_model.get_weights()
 adv_model.fit(generatorTrainData(batch_size_train=16),
               epochs=100,
               steps_per_epoch=int(len(train_total) / 16),
               callbacks=[tensorboard_callback, cp_callback])
-adv_model.set_weights(initial_weights)
 print('Training time per epoch: ' + str((time.time() - start_time_train) / 100))
 
 start_time_test = time.time()
