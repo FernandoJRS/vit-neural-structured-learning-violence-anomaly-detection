@@ -36,7 +36,7 @@ cp_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
 
 start_time_train = time.time()
 adv_model.fit(generatorTrainData(batch_size_train=16),
-              epochs=100,
+              epochs=1000,
               steps_per_epoch=int(len(train_total) / 16),
               validation_data=generatorValidationData(batch_size_train=16),
               validation_steps=int(len(validation_total) / 16),
