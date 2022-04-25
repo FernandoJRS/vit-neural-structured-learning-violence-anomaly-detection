@@ -153,7 +153,7 @@ def generatorTrainData(batch_size_train=16):
             lx = []
             ly = []
             for i in range(batch_start, batch_stop):
-                frame = cv2.resize(train_total[i][0], (224, 224))
+                frame = cv2.resize(train_total[i][0], (width, height))
                 frame = (frame.astype('float32') - 127.5) / 127.5
                 label = train_total[i][1]
 
@@ -179,7 +179,7 @@ def generatorTestData(batch_size_test=16):
             lx = []
             ly = []
             for i in range(batch_start, batch_stop):
-                frame = cv2.resize(test_total[i][0], (224, 224))
+                frame = cv2.resize(test_total[i][0], (width, height))
                 frame = (frame.astype('float32') - 127.5) / 127.5
                 label = test_total[i][1]
 
