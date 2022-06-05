@@ -2,17 +2,17 @@
 
 ## Vision Transformer Featured Model For Training.
 
-El modelo que usamos para realizar es un Vision Transformer (ViT). El modelo preentrenado que usamos en los scripts de este repositorio puede descargarse desde el siguiente enlace:
+The model we use to make is a Vision Transformer (ViT). The pre-trained model that we use in the scripts in this repository can be downloaded from the following link:
 
   Link: https://tfhub.dev/sayakpaul/vit_s16_fe/1
 
-Para la correcta ejecución de los scripts, debe descargarse el modelo ViT y cargarlo mediante la ruta relativa en el script que se desea ejecutar. El proceso se describe en detalle al final de este documento.
+For the correct run of the scripts, the ViT model must be downloaded and loaded using the relative path in the script to be run. The process is described in detail at the end of this document.
 
 ## Datasets
 
-Los datasets utilizados en este proyecto son NTU CCTV-Fights, UBI_Fights, XD-Violence y UCF_Crime. <br/>
+The datasets used in this project are NTU CCTV-Fights, UBI_Fights, XD-Violence, and UCF_Crime. <br/>
 
-Las rutas de los datasets usados son las siguientes:
+The paths of the datasets used are the following:
 
   NTU CCTV-Fights: https://rose1.ntu.edu.sg/dataset/cctvFights/ <br/>
   UBI_Fights: http://socia-lab.di.ubi.pt/EventDetection/ <br/>
@@ -21,8 +21,8 @@ Las rutas de los datasets usados son las siguientes:
 
 ## Requirements 
 
-En esta sección se presentan los requisitos necesarios para ejecutar los scripts asi como un archivo de instalación de requisitos que se indica a continuación.
-  
+This section presents the requirements needed to run the scripts as well as an installation file requirements listed below.
+
   File: requirements.py <br/>
   
   !pip install --upgrade tensorflow_hub <br/>
@@ -33,45 +33,45 @@ En esta sección se presentan los requisitos necesarios para ejecutar los script
 
 ## Files Scheme
 
-El esquema de archivos de este repositorio va asociado por pares y a su vez cada par de scripts asociado a un conjunto de de datos. Todos ellos trabajan con el mismo modelo ViT. El esquema es el siguiente:
+The file scheme of this repository is associated by pairs and in turn each pair of scripts is associated with a data set. They all work with the same ViT model. The scheme is as follows:
 
 1. DATA_CCTV.py - NSL_2D_CCTV.py - NTU CCTV-Fights.
 
-- El archivo DATA_CCTV carga y procesa el conjunto de datos NTU CCTV-Fights. El archivo NSL_2D_CCTV carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos NTU CCTV-Fights.
+- The DATA_CCTV file loads and processes the NTU CCTV-Fights dataset. The NSL_2D_CCTV file loads the ViT model, applies structured neural learning, and performs training and evaluation for the NTU CCTV-Fights dataset.
     
 2. DATA_UBI.py - NSL_2D_UBI.py - UBI_Fights.
 
-- El archivo DATA_UBI carga y procesa el conjunto de datos UBI_Fights. El archivo NSL_2D_UBI carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UBI_Fights.
+- The DATA_UBI file loads and processes the UBI_Fights dataset. The NSL_2D_UBI file loads the ViT model, applies structured neural learning, and performs training and evaluation for the UBI_Fights dataset.
 
 3. DATA_XD.py - NSL_2D_XD.py - XD-Violence.
 
-- El archivo DATA_XD carga y procesa el conjunto de datos XD-Violence. El archivo NSL_2D_XD carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el    entrenamiento y la evaluación para el conjunto de datos XD-Violence.
+- The DATA_XD file loads and processes the XD-Violence dataset. The NSL_2D_XD file loads the ViT model, applies structured neural learning, and performs training and evaluation for the XD-Violence dataset.
     
 4. DATA_UCF.py - NSL_2D_UCF.py - UCF_Crime.
 
-- El archivo DATA_UCF.py carga y procesa el conjunto de datos UCF_Crime. El archivo NSL_2D_UCF.py carga el modelo ViT, aplica el aprendizaje neuronal estructurado y realiza el entrenamiento y la evaluación para el conjunto de datos UCF_Crime.
+- The DATA_UCF.py file loads and processes the UCF_Crime data set. The NSL_2D_UCF.py file loads the ViT model, applies structured neural learning, and performs training and evaluation for the UCF_Crime dataset.
 
 ## Run Scripts
 
-Para ejecutar los scripts correctamente hay que seguir los siguientes pasos:
+To run the scripts correctly, follow these steps:
 
-1. Descargar el modelo ViT a través del enlace que se proporciona en este documento.
+1. Download the ViT model through the link provided in this document.
 
-2. Seleccionar y descargar los pares de scripts que se quieren ejecutar y descargar el dataset correspondiente, ejemplo:
+2. Select and download the pairs of scripts that you want to run and download the corresponding dataset, example:
 
-- Si queremos ejecutar el script NSL_2D_CCTV.py, debemos descargar dicho script y su script asociado DATA_CCTV.py, además también debemos descargar su conjunto de datos correspondiente NTU CCTV-Fights a través del enlace que se proporciona en este documento. De igual forma para el resto de scripts (NSL_2D_CCTV.py, NSL_2D_UBI.py, NSL_2D_XD.py).
+- If we want to run the NSL_2D_CCTV.py script, we must download that script and its associated DATA_CCTV.py script, in addition we must also download its corresponding NTU CCTV-Fights dataset through the link provided in this document. Similarly for the rest of the scripts (NSL_2D_CCTV.py, NSL_2D_UBI.py, NSL_2D_XD.py).
 
-3. El tercer paso es configurar los siguientes parametros de los scripts NSL_2D_DatasetName.py y DATA_DatasetName.py:
+3. The third step is to configure the following parameters of the NSL_2D_DatasetName.py and DATA_DatasetName.py scripts:
 
-- El primer parámetro a configurar es la ruta del modelo ViT, una vez descargado se debe indicar su ruta relativa en la variable load_model del script NSL_2D_DatasetName usando la función hub.load(). 
+- The first parameter to configure is the path of the ViT model, once downloaded its relative path must be indicated in the load_model variable of the NSL_2D_DatasetName script using the hub.load() function.
 
 ```
 loaded_model = hub.load("HubModels/vit_b8_fe_1")
 ```
 
-- Los siguientes parámetros a configurar es la ruta del conjunto de datos, una vez descargado se debe indicar una serie de rutas relativas en los scripts DATA_DatasetName.
+- The next parameters to configure is the path of the data set, once downloaded, a series of relative paths must be indicated in the DATA_DatasetName scripts.
 
-  - Para el script DATA_CCTV.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - For the DATA_CCTV.py script, the routes to modify depending on where the dataset has been downloaded are:
   
     - path_base = 'CCTV-Fights/'
     - path_videos = 'CCTV-Fights/Videos/'<br/><br/>
@@ -81,7 +81,7 @@ loaded_model = hub.load("HubModels/vit_b8_fe_1")
     path_videos = 'CCTV-Fights/Videos/'
     ```
 
-  - Para el script DATA_UBI.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - For the DATA_UBI.py script, the paths to modify depending on where the dataset has been downloaded are:
   
     - path_base = 'UBI_Fights/annotation/'
     - path_videos = 'UBI_Fights/videos/'<br/><br/>
@@ -91,7 +91,7 @@ loaded_model = hub.load("HubModels/vit_b8_fe_1")
     path_videos = 'UBI_Fights/videos/'
     ```
 
-  - Para el script DATA_XD.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - For the DATA_XD.py script, the paths to modify depending on where the dataset has been downloaded are:
   
     - path_base = 'XD-Violence/'
     - path_videos_train = 'XD-Violence/Train/'
@@ -105,7 +105,7 @@ loaded_model = hub.load("HubModels/vit_b8_fe_1")
     path_videos_annotations = 'XD-Violence/annotations.txt'
     ```
 
-  - Para el script DATA_UCF.py las rutas a modificar en función de donde se haya descargado el conjunto de datos son:
+  - For the DATA_UCF.py script, the paths to modify depending on where the dataset has been downloaded are:
   
     - path_videos = 'UCF_Crimes/Videos/'
     - path_splits = 'UCF_Crimes/Action_Regnition_splits/'<br/><br/>
@@ -115,48 +115,50 @@ loaded_model = hub.load("HubModels/vit_b8_fe_1")
     path_splits = 'UCF_Crimes/Action_Regnition_splits/'
     ```
 
-- Los últimos parámetros a configurar son la ruta de los checkpoints para almacenar el modelo pre-entrenado y la ruta donde se almacenará un TensorBoard con la información del entrenamiento del modelo y los archivos .log. Estas rutas se modifican en los scripts NSL_2D_DatasetName.py. Los resultados se almacenará dentro de un directorio llamado 'Results' que se generará automáticamente dentro de la ruta en la cual se haya descargado cada uno de los conjuntos de datos.
 
-  - Para el conjunto de datos NTU CCTV-Fights, en el script NSL_2D_CCTV.py, las rutas son las siguientes:
+- The last parameters to configure are the path of the checkpoints to store the pre-trained model and the path where a TensorBoard will be stored with the model training information and the .log files. These paths are modified in the NSL_2D_DatasetName.py scripts. The results will be stored in a directory called 'Results' that will be generated automatically within the path in which each of the data sets has been downloaded.
+
+  - For the NTU CCTV-Fights dataset, in the NSL_2D_CCTV.py script, the paths are as follows:
   
     ```
     log_dir = "CCTV-Fights/Results/logs/fit/"
     checkpoint_path = "CCTV-Fights/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos UBI_Fights, en el script NSL_2D_UBI.py, las rutas son las siguientes:
+  - For the UBI_Fights dataset, in the NSL_2D_UBI.py script, the paths are as follows:
   
     ```
     log_dir = "UBI_Fights/Results/logs/fit/"
     checkpoint_path = "UBI_Fights/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos XD-Violence, en el script NSL_2D_XD.py, las rutas son las siguientes:
+  - For the XD-Violence dataset, in the NSL_2D_XD.py script, the paths are as follows:
 
     ```
     log_dir = "XD-Violence/Results/logs/fit/"
     checkpoint_path = "XD-Violence/Results/logs/checkpoint/"
     ```
     
-  - Para el conjunto de datos UCF_Crime.py, en el script NSL_2D_UCF.py, las rutas son las siguientes:
+  - For the UCF_Crime.py dataset, in the NSL_2D_UCF.py script, the paths are as follows:
 
     ```
     log_dir = "UCF_Crimes/Results/logs/fit/"
     checkpoint_path = "UCF_Crimes/Results/logs/checkpoint/"
     ```
     
-4. El cuarto y último paso es ejecutar el proceso de entrenamiento y evaluación del modelo con el conjunto de datos seleccinado, para cada conjunto de datos hay que ejecutar los siguientes scripts.
+4. The fourth and last step is to execute the process of training and evaluating the model with the selected data set, for each data set the following scripts must be executed.
 
-- Para el conjunto de datos NTU CCTV-Fights hay que ejecutar el script NSL_2D_CCTV.py.
-- Para el conjunto de datos UBI_Fights hay que ejecutar el script NSL_2D_UBI.py.
-- Para el conjunto de datos XD-Violence hay que ejecutar el script NSL_2D_XD.py.
-- Para el conjunto de datos UCF_Crime hay que ejecutar el script NSL_2D_UCF.py.
+- For the NTU CCTV-Fights dataset, the NSL_2D_CCTV.py script must be executed.
+- For the UBI_Fights dataset, the NSL_2D_UBI.py script must be executed.
+- For the XD-Violence dataset, run the NSL_2D_XD.py script.
+- For the UCF_Crime dataset, run the NSL_2D_UCF.py script.
 
 ## Results
 
-En esta sección se muestran los resultados obtenidos por cada uno de los conjuntos de datos empleando dos métricas, Sparse Categorical Accuracy y Categorical Accuracy.
+This section shows the results obtained for each of the data sets using two metrics, Sparse Categorical Accuracy and Categorical Accuracy.
 
-En la primera tabla se muestran los resultados de una iteración para la partición entre entrenamiento, validación y testeo que viene predefinida para cada uno de los conjuntos de datos. El conjunto de datos UBI_Fights no posee una partición predefinida, por lo que en el archivo DATA_UBI.py, realizamos la partición en entrenamiento, validación y test.
+The first table shows the results of an iteration for the partition between training, validation and testing that is predefined for each of the data sets. The UBI_Fights dataset does not have a predefined partition, so in the DATA_UBI.py file, we perform the partition in training, validation and test.
+
 
 |     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
 |-----------------|--------------|-----------------------------|----------------------|----------------|
@@ -176,20 +178,20 @@ El conjunto de datos UCF_Crime viene con cuatro particiones predefinidas en la s
 | 04	                | Train_004   | Test_004   | 99.99 %                     | 99.99 %              |    0,040693 s  |
 
 
-En la siguiente tabla se muestran las matrices de confusión para cada uno de los conjuntos de datos.
+The following table shows the confusion matrices for each of the datasets.
 
 
 CCTV Confusion Matrix      | UBI Confusion Matrix      | XD Confusion Matrix       | UCF Confusion Matrix
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![CCTV_CM](figures/CCTV_CM.png?raw=True "CCTV_CM") | ![UBI_CM](figures/UBI_CM.png?raw=True "UBI_CM") | ![XD_CM](figures/XD_CM.png?raw=True "XD_CM") | ![UCF_CM](figures/UCF_CM.png?raw=True "UCF_CM")
 
-En la siguiente tabla se muestran las matrices de confusión para una experimentación cruzada entre los datasets monoclase CCTV-Fights y UBI-Fights en los cuales se usa los modelos pre-entrenados con cada uno de los datasets para testear el otro.
+The following table shows the confusion matrices for a cross experimentation between the CCTV-Fights and UBI-Fights single-class datasets in which the pre-trained models with each of the datasets are used to test the other.
 
 CCTV (Train) - UBI (Test) Confusion Matrix  | UBI (Train) - CCTV (Test) Confusion Matrix      |
 :------------------------------------------:|:-----------------------------------------------:|
 ![CCTV_UBI_CM](figures/CCTV_UBI_CM.png?raw=True "CCTV_UBI_CM") | ![UBI_CCTV_CM](figures/UBI_CCTV_CM.png?raw=True "UBI_CCTV_CM")
 
-En la siguiente tabla se muestran las matrices de confusión para una experimentación cruzada entre los datasets multiclase UCF-Crime y XD-Violence en los cuales se usa los modelos entrenados solo con las clases coincidentes en ambos conjuntos de datos.
+The following table shows the confusion matrices for cross-experimentation between the UCF-Crime and XD-Violence multiclass datasets in which the trained models are used only with the matching classes in both datasets.
 
 UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Matrix      |
 :------------------------------------------:|:-----------------------------------------------:|
@@ -197,7 +199,7 @@ UCF (Train) - XD (Test) Confusion Matrix  | XD (Train) - UCF (Test) Confusion Ma
 
 ## Ablation Study
 
-En esta sección se presentan un estudio de ablacion en el que se emplea el ViT sin aplicar el aprendizaje neuronal estructurado, simplemente aplicando aprendizaje supervisado. Los resultados obtenidos se muestran en la siguiente tabla:
+In this section, an ablation study is presented in which ViT is used without applying structured neural learning, simply by applying supervised learning. The results obtained are shown in the following table:
 
 |     Dataset     |     Input    | Sparse Categorical Accuracy | Categorical Accuracy | Inference Time |
 |-----------------|--------------|-----------------------------|----------------------|----------------|
@@ -208,7 +210,7 @@ En esta sección se presentan un estudio de ablacion en el que se emplea el ViT 
 
 ## Performance
 
-Un ejemplo del funcionamiento del modelo sobre varios videos se puede encontrar en los siguientes enlances.
+An example of how the model works on several videos can be found in the following links.
 
 Link 1: https://www.dropbox.com/s/b0ila0rlr5f9a2k/fight0005.avi?dl=0 <br/>
 Link 2: https://www.dropbox.com/s/sfit3lrco9rbwe2/fight0033.avi?dl=0 <br/>
