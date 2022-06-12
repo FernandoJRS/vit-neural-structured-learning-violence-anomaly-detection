@@ -26,7 +26,7 @@ This section presents the requirements needed to run the scripts as well as an i
   File: requirements.py <br/>
   
   !pip install --upgrade tensorflow_hub <br/>
-  !pip install tensorflow==2.7.0 <br/>
+  !pip install tensorflow==2.9.1 <br/>
   !pip install scikit-learn <br/>
   !pip install neural_structured_learning <br/>
   !pip install opencv-python==4.5.5.62 <br/>
