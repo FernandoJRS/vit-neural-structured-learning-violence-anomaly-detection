@@ -208,11 +208,3 @@ In this section, an ablation study is presented in which ViT is used without app
 | XD-Violence     | Optical Flow |         87.23 %             |        87.23 %       |    0,041159 s  |
 | UCF_Crime	      | Optical Flow |         87.52 %	           |        87.52 %       |    0,040981 s  |
 
-## Performance
-
-An example of how the model works on several videos can be found in the following links.
-
-Link 1: https://www.dropbox.com/s/b0ila0rlr5f9a2k/fight0005.avi?dl=0 <br/>
-Link 2: https://www.dropbox.com/s/sfit3lrco9rbwe2/fight0033.avi?dl=0 <br/>
-Link 3: https://www.dropbox.com/s/hfo63facdg4kbnu/fight0128.avi?dl=0
-
