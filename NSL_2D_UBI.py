@@ -46,7 +46,7 @@ adv_model.fit(generatorTrainData(batch_size_train=16),
               validation_steps=int(len(validation_total) / 16),
               callbacks=[tensorboard_callback, cp_callback], 
               verbose=1)
-print('Training time per epoch: ' + str((time.time() - start_time_train) / 200))
+print('Training time per epoch: ' + str((time.time() - start_time_train) / 2000))
 
 start_time_test = time.time()
 adv_model.evaluate(generatorTestData(batch_size_test=16),
