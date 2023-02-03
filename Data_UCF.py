@@ -67,78 +67,78 @@ def read_video(vid, width, height, resize=False):
 
 
 train_total = []
-train_read = os.listdir(path_splits + 'train_001.txt')
-
-for i in range(len(train_read)):
-    video_frames = read_video_optical_flow(path_videos + train_read[i], 20, 20, resize=True)
-    for j in range(len(video_frames)):
-        fr = video_frames[j]
-        if 'Abuse' in train_read[i]:
-            train_total.append((fr, 0))
-        if 'Arrest' in train_read[i]:
-            train_total.append((fr, 1))
-        if 'Arson' in train_read[i]:
-            train_total.append((fr, 2))
-        if 'Assault' in train_read[i]:
-            train_total.append((fr, 3))
-        if 'Burglary' in train_read[i]:
-            train_total.append((fr, 4))
-        if 'Explosion' in train_read[i]:
-            train_total.append((fr, 5))
-        if 'Fighting' in train_read[i]:
-            train_total.append((fr, 6))
-        if 'Normal_Videos_event' in train_read[i]:
-            train_total.append((fr, 7))
-        if 'RoadAccidents' in train_read[i]:
-            train_total.append((fr, 8))
-        if 'Robbery' in train_read[i]:
-            train_total.append((fr, 9))
-        if 'Shooting' in train_read[i]:
-            train_total.append((fr, 10))
-        if 'Shoplifting' in train_read[i]:
-            train_total.append((fr, 11))
-        if 'Stealing' in train_read[i]:
-            train_total.append((fr, 12))
-        if 'Vandalism' in train_read[i]:
-            train_total.append((fr, 13))
+with open(path_splits + 'train_001.txt') as f:
+    train_read = f.readlines()
+    for i in range(len(train_read)):
+        video_frames = read_video_optical_flow(path_videos + train_read[i], 20, 20, resize=True)
+        for j in range(len(video_frames)):
+            fr = video_frames[j]
+            if 'Abuse' in train_read[i]:
+                train_total.append((fr, 0))
+            if 'Arrest' in train_read[i]:
+                train_total.append((fr, 1))
+            if 'Arson' in train_read[i]:
+                train_total.append((fr, 2))
+            if 'Assault' in train_read[i]:
+                train_total.append((fr, 3))
+            if 'Burglary' in train_read[i]:
+                train_total.append((fr, 4))
+            if 'Explosion' in train_read[i]:
+                train_total.append((fr, 5))
+            if 'Fighting' in train_read[i]:
+                train_total.append((fr, 6))
+            if 'Normal_Videos_event' in train_read[i]:
+                train_total.append((fr, 7))
+            if 'RoadAccidents' in train_read[i]:
+                train_total.append((fr, 8))
+            if 'Robbery' in train_read[i]:
+                train_total.append((fr, 9))
+            if 'Shooting' in train_read[i]:
+                train_total.append((fr, 10))
+            if 'Shoplifting' in train_read[i]:
+                train_total.append((fr, 11))
+            if 'Stealing' in train_read[i]:
+                train_total.append((fr, 12))
+            if 'Vandalism' in train_read[i]:
+                train_total.append((fr, 13))
 
 random.shuffle(train_total)
 
 test_total = []
-test_read = os.listdir(path_splits + 'test_001.txt')
-
-for i in range(len(test_read)):
-    video_frames = read_video_optical_flow(path_videos + test_read[i], 20, 20, resize=True)
-    for j in range(len(video_frames)):
-        fr = video_frames[j]
-        if 'Abuse' in test_read[i]:
-            test_total.append((fr, 0))
-        if 'Arrest' in test_read[i]:
-            test_total.append((fr, 1))
-        if 'Arson' in test_read[i]:
-            test_total.append((fr, 2))
-        if 'Assault' in test_read[i]:
-            test_total.append((fr, 3))
-        if 'Burglary' in test_read[i]:
-            test_total.append((fr, 4))
-        if 'Explosion' in test_read[i]:
-            test_total.append((fr, 5))
-        if 'Fighting' in test_read[i]:
-            test_total.append((fr, 6))
-        if 'Normal_Videos_event' in test_read[i]:
-            test_total.append((fr, 7))
-        if 'RoadAccidents' in test_read[i]:
-            test_total.append((fr, 8))
-        if 'Robbery' in test_read[i]:
-            test_total.append((fr, 9))
-        if 'Shooting' in test_read[i]:
-            test_total.append((fr, 10))
-        if 'Shoplifting' in test_read[i]:
-            test_total.append((fr, 11))
-        if 'Stealing' in test_read[i]:
-            test_total.append((fr, 12))
-        if 'Vandalism' in test_read[i]:
-            test_total.append((fr, 13))
+with open(path_splits + 'test_001.txt') as f:
+    test_read = f.readlines()
+    for i in range(len(test_read)):
+        video_frames = read_video_optical_flow(path_videos + test_read[i], 20, 20, resize=True)
+        for j in range(len(video_frames)):
+            fr = video_frames[j]
+            if 'Abuse' in test_read[i]:
+                test_total.append((fr, 0))
+            if 'Arrest' in test_read[i]:
+                test_total.append((fr, 1))
+            if 'Arson' in test_read[i]:
+                test_total.append((fr, 2))
+            if 'Assault' in test_read[i]:
+                test_total.append((fr, 3))
+            if 'Burglary' in test_read[i]:
+                test_total.append((fr, 4))
+            if 'Explosion' in test_read[i]:
+                test_total.append((fr, 5))
+            if 'Fighting' in test_read[i]:
+                test_total.append((fr, 6))
+            if 'Normal_Videos_event' in test_read[i]:
+                test_total.append((fr, 7))
+            if 'RoadAccidents' in test_read[i]:
+                test_total.append((fr, 8))
+            if 'Robbery' in test_read[i]:
+                test_total.append((fr, 9))
+            if 'Shooting' in test_read[i]:
+                test_total.append((fr, 10))
+            if 'Shoplifting' in test_read[i]:
+                test_total.append((fr, 11))
+            if 'Stealing' in test_read[i]:
+                test_total.append((fr, 12))
+            if 'Vandalism' in test_read[i]:
+                test_total.append((fr, 13))
 
 random.shuffle(test_total)
 
