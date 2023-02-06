@@ -11,21 +11,12 @@ path_videos = 'UBI_Fights/videos/'
 
 annotations = os.listdir(path_base)
 videos = os.listdir(path_videos + 'fight/') + os.listdir(path_videos + 'normal/')
-label_videos = list()
-
-pos = 0
-neg = 0
-
-for v in videos:
-    if 'F' in v:
-        label_videos.append(1)
-    else:
-        label_videos.append(0)
+test_videos = [l for l in list(csv.reader(open('UBI_Fights/test_videos.csv')))]
+train_videos = [p for p in videos if [p] not in test_videos]
 
 width = 224
 height = 224
 channels = 3
-
 
 def read_video_optical_flow(vid, width, height, resize=False):
     video_frames_optical_flow = list()
@@ -80,43 +71,13 @@ def read_video(vid, width, height, resize=False):
     return video_frames
 
 
-X_train = []
-y_train = []
-X_valid_test = []
-y_valid_test = []
-X_test = []
-y_test = []
-X_valid = []
-y_valid = []
-
-split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=0)
-for train_index, test_valid_index in split.split(videos, label_videos):
-    for ti in train_index:
-        X_train.append(videos[ti])
-        y_train.append(label_videos[ti])
-
-    for tsi in test_valid_index:
-        X_valid_test.append(videos[tsi])
-        y_valid_test.append(label_videos[tsi])
-
-split2 = StratifiedShuffleSplit(n_splits=1, test_size=0.5, random_state=0)
-for test_index, valid_index in split2.split(X_valid_test, y_valid_test):
-    for tssi in test_index:
-        X_test.append(X_valid_test[tssi])
-        y_test.append(y_valid_test[tssi])
-
-    for tvi in valid_index:
-        X_valid.append(X_valid_test[tvi])
-        y_valid.append(y_valid_test[tvi])
-
-
 train_total = []
-for i in range(len(X_train)):
-    if 'F' in X_train[i]:
-        video_frames = read_video_optical_flow(path_videos + 'fight/' + X_train[i], 20, 20, resize=True)
+for i in range(len(train_videos)):
+    if 'F' in train_videos[i]:
+        video_frames = read_video_optical_flow(path_videos + 'fight/' + train_videos[i], 20, 20, resize=True)
     else:
-        video_frames = read_video_optical_flow(path_videos + 'normal/' + X_train[i], 20, 20, resize=True)
-    frames_label = list(csv.reader(open(path_base + X_train[i].split('.')[0] + '.csv')))
+        video_frames = read_video_optical_flow(path_videos + 'normal/' + train_videos[i], 20, 20, resize=True)
+    frames_label = list(csv.reader(open(path_base + train_videos[i].split('.')[0] + '.csv')))
     for j in range(len(video_frames)):
         fr = video_frames[j]
         label = frames_label[j][0]
@@ -124,27 +85,13 @@ for i in range(len(X_train)):
 random.shuffle(train_total)
 
 
-validation_total = []
-for i in range(len(X_valid)):
-    if 'F' in X_valid[i]:
-        video_frames = read_video_optical_flow(path_videos + 'fight/' + X_valid[i], 20, 20, resize=True)
-    else:
-        video_frames = read_video_optical_flow(path_videos + 'normal/' + X_valid[i], 20, 20, resize=True)
-    frames_label = list(csv.reader(open(path_base + X_valid[i].split('.')[0] + '.csv')))
-    for j in range(len(video_frames)):
-        fr = video_frames[j]
-        label = frames_label[j][0]
-        validation_total.append((fr, label))
-random.shuffle(validation_total)
-
-
 test_total = []
-for i in range(len(X_test)):
-    if 'F' in X_test[i]:
-        video_frames = read_video_optical_flow(path_videos + 'fight/' + X_test[i], 20, 20, resize=True)
+for i in range(len(test_videos)):
+    if 'F' in test_videos[i][0]:
+        video_frames = read_video_optical_flow(path_videos + 'fight/' + test_videos[i][0], 20, 20, resize=True)
     else:
-        video_frames = read_video_optical_flow(path_videos + 'normal/' + X_test[i], 20, 20, resize=True)
-    frames_label = list(csv.reader(open(path_base + X_test[i].split('.')[0] + '.csv')))
+        video_frames = read_video_optical_flow(path_videos + 'normal/' + test_videos[i][0], 20, 20, resize=True)
+    frames_label = list(csv.reader(open(path_base + test_videos[i][0].split('.')[0] + '.csv')))
     for j in range(len(video_frames)):
         fr = video_frames[j]
         label = frames_label[j][0]
@@ -165,32 +112,6 @@ def generatorTrainData(batch_size_train=16):
                 frame = cv2.resize(train_total[i][0], (width, height))
                 frame = (frame.astype('float32') - 127.5) / 127.5
                 label = train_total[i][1]
-
-                lx.append(frame)
-                ly.append(label)
-
-            x = np.array(lx).astype('float32')
-            y = np.array(ly).astype('float32')
-
-            x = tf.convert_to_tensor(x)
-            y = tf.convert_to_tensor(y)
-
-            yield {'feature': x, 'label': y}
-
-
-# Validation
-
-def generatorValidationData(batch_size_train=16):
-    while True:
-        for count in range(int(len(validation_total) / batch_size_train)):
-            batch_start = batch_size_train * count
-            batch_stop = batch_size_train + (batch_size_train * count)
-            lx = []
-            ly = []
-            for i in range(batch_start, batch_stop):
-                frame = cv2.resize(validation_total[i][0], (width, height))
-                frame = (frame.astype('float32') - 127.5) / 127.5
-                label = validation_total[i][1]
 
                 lx.append(frame)
                 ly.append(label)
