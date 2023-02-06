@@ -11,7 +11,7 @@ path_videos = 'UBI_Fights/videos/'
 
 annotations = os.listdir(path_base)
 videos = os.listdir(path_videos + 'fight/') + os.listdir(path_videos + 'normal/')
-test_videos = [l for l in list(csv.reader(open('UBI_Fights/test_videos.csv')))]
+test_videos = [l[0] + '.mp4' for l in list(csv.reader(open('UBI_Fights/test_videos.csv')))]
 train_videos = [p for p in videos if [p] not in test_videos]
 
 width = 224
@@ -87,11 +87,11 @@ random.shuffle(train_total)
 
 test_total = []
 for i in range(len(test_videos)):
-    if 'F' in test_videos[i][0]:
-        video_frames = read_video_optical_flow(path_videos + 'fight/' + test_videos[i][0], 20, 20, resize=True)
+    if 'F' in test_videos[i]:
+        video_frames = read_video_optical_flow(path_videos + 'fight/' + test_videos[i], 20, 20, resize=True)
     else:
-        video_frames = read_video_optical_flow(path_videos + 'normal/' + test_videos[i][0], 20, 20, resize=True)
-    frames_label = list(csv.reader(open(path_base + test_videos[i][0].split('.')[0] + '.csv')))
+        video_frames = read_video_optical_flow(path_videos + 'normal/' + test_videos[i], 20, 20, resize=True)
+    frames_label = list(csv.reader(open(path_base + test_videos[i].split('.')[0] + '.csv')))
     for j in range(len(video_frames)):
         fr = video_frames[j]
         label = frames_label[j][0]
