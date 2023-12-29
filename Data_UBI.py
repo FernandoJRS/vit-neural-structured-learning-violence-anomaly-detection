@@ -74,9 +74,9 @@ def read_video(vid, width, height, resize=False):
 train_total = []
 for i in range(len(train_videos)):
     if 'F' in train_videos[i]:
-        video_frames = read_video_optical_flow(path_videos + 'fight/' + train_videos[i], 20, 20, resize=True)
+        video_frames = read_video_optical_flow(path_videos + 'fight/' + train_videos[i], 224, 224, resize=True)
     else:
-        video_frames = read_video_optical_flow(path_videos + 'normal/' + train_videos[i], 20, 20, resize=True)
+        video_frames = read_video_optical_flow(path_videos + 'normal/' + train_videos[i], 224, 224, resize=True)
     frames_label = list(csv.reader(open(path_base + train_videos[i].split('.')[0] + '.csv')))
     for j in range(len(video_frames)):
         fr = video_frames[j]
@@ -88,9 +88,9 @@ random.shuffle(train_total)
 test_total = []
 for i in range(len(test_videos)):
     if 'F' in test_videos[i]:
-        video_frames = read_video_optical_flow(path_videos + 'fight/' + test_videos[i], 20, 20, resize=True)
+        video_frames = read_video_optical_flow(path_videos + 'fight/' + test_videos[i], 224, 224, resize=True)
     else:
-        video_frames = read_video_optical_flow(path_videos + 'normal/' + test_videos[i], 20, 20, resize=True)
+        video_frames = read_video_optical_flow(path_videos + 'normal/' + test_videos[i], 224, 224, resize=True)
     frames_label = list(csv.reader(open(path_base + test_videos[i].split('.')[0] + '.csv')))
     for j in range(len(video_frames)):
         fr = video_frames[j]
