@@ -70,7 +70,7 @@ train_total = []
 with open(path_splits + 'train_001.txt') as f:
     train_read = f.readlines()
     for i in range(len(train_read)):
-        video_frames = read_video_optical_flow(path_videos + train_read[i], 20, 20, resize=True)
+        video_frames = read_video_optical_flow(path_videos + train_read[i], 224, 224, resize=True)
         for j in range(len(video_frames)):
             fr = video_frames[j]
             if 'Abuse' in train_read[i]:
@@ -108,7 +108,7 @@ test_total = []
 with open(path_splits + 'test_001.txt') as f:
     test_read = f.readlines()
     for i in range(len(test_read)):
-        video_frames = read_video_optical_flow(path_videos + test_read[i], 20, 20, resize=True)
+        video_frames = read_video_optical_flow(path_videos + test_read[i], 224, 224, resize=True)
         for j in range(len(video_frames)):
             fr = video_frames[j]
             if 'Abuse' in test_read[i]:
