@@ -94,7 +94,7 @@ def frame_range_annotations(test_annotations):
 
 train_total = []
 for i in range(len(videos_train)):
-    video_frames = read_video_optical_flow(path_videos_train + videos_train[i], 20, 20, resize=True)
+    video_frames = read_video_optical_flow(path_videos_train + videos_train[i], 224, 224, resize=True)
     for j in range(len(video_frames)):
         fr = video_frames[j]
         if 'A' in videos_train[i]:
@@ -119,7 +119,7 @@ test_total = []
 test_annotations = frame_range_annotations(videos_test_annotations)
 
 for i in range(len(videos_test)):
-    video_frames = read_video_optical_flow(path_videos_test + videos_test[i], 20, 20, resize=True)
+    video_frames = read_video_optical_flow(path_videos_test + videos_test[i], 224, 224, resize=True)
     violence_ranges = test_annotations[i]
 
     for j in range(len(video_frames)):
