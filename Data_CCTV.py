@@ -107,7 +107,7 @@ for clip in data:
         validation.append(clip)
 
 for i in range(len(train)):
-    video_frames = read_video_optical_flow(path_videos + train[i] + '.mpeg', 20, 20, resize=True)
+    video_frames = read_video_optical_flow(path_videos + train[i] + '.mpeg', 224, 224, resize=True)
     for j in range(len(video_frames)):
         fr = video_frames[j]
         if is_frame_anomaly(i, j, set='Train'):
@@ -119,7 +119,7 @@ train_total = train_normal + train_anomaly
 random.shuffle(train_total)
 
 for i in range(len(validation)):
-    video_frames = read_video_optical_flow(path_videos + validation[i] + '.mpeg', 20, 20, resize=True)
+    video_frames = read_video_optical_flow(path_videos + validation[i] + '.mpeg', 224, 224, resize=True)
     for j in range(len(video_frames)):
         fr = video_frames[j]
         if is_frame_anomaly(i, j, set='Validation'):
@@ -131,7 +131,7 @@ validation_total = validation_normal + validation_anomaly
 random.shuffle(validation_total)
 
 for i in range(len(test)):
-    video_frames = read_video_optical_flow(path_videos + test[i] + '.mpeg', 20, 20, resize=True)
+    video_frames = read_video_optical_flow(path_videos + test[i] + '.mpeg', 224, 224, resize=True)
     for j in range(len(video_frames)):
         fr = video_frames[j]
         if is_frame_anomaly(i, j, set='Test'):
